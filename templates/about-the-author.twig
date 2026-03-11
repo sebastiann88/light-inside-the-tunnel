@@ -1,0 +1,198 @@
+{#
+  About the Author — /about-the-author
+  Sebastian Matthew Nadeau: story, book contributions, design philosophy, personal quotes
+#}
+
+{% extends '_layouts/base' %}
+
+{% block title %}About the Author — Sebastian Matthew Nadeau{% endblock %}
+
+{% block bodyClass %}page-author{% endblock %}
+
+{% block head %}
+  {% do seomatic.meta.seoTitle("About the Author — Sebastian Matthew Nadeau") %}
+  {% do seomatic.meta.seoDescription("Sebastian Matthew Nadeau is a writer and designer from Ottawa. His philosophy wasn't built in a university — but in grocery stores, on buses, and in conversation.") %}
+  {% do seomatic.meta.seoKeywords("Sebastian Matthew Nadeau, Sebastian Nadeau author, skylight designs, Ottawa author") %}
+
+  {# Open Graph #}
+  {% do seomatic.meta.ogType("profile") %}
+  {% do seomatic.meta.ogTitle("Sebastian Matthew Nadeau — Author of The Light Inside the Tunnel") %}
+  {% do seomatic.meta.ogDescription("Writer, graphic designer, and philosopher from Ottawa, Canada. Author of The Light Inside the Tunnel.") %}
+
+  {# Twitter Card #}
+  {% do seomatic.meta.twitterCard("summary_large_image") %}
+  {% do seomatic.meta.twitterTitle("Sebastian Matthew Nadeau — Author") %}
+  {% do seomatic.meta.twitterDescription("Writer, designer, philosopher. Ottawa, Canada. Author of The Light Inside the Tunnel.") %}
+{% endblock %}
+
+{% block content %}
+
+  {# Author Hero #}
+  <header class="author-hero section--tunnel" data-reveal>
+    <div class="container container--content">
+      <div class="author-hero__grid">
+        {% if (entry.authorPhoto ?? null) and entry.authorPhoto|length %}
+          {% set photo = entry.authorPhoto.one() %}
+          {% if photo %}
+            <div class="author-hero__photo">
+              {% if craft.app.plugins.getPlugin('imager-x') %}
+                {% set transforms = craft.imagerx.transformImage(photo, 'authorPhoto') %}
+                <img src="{{ transforms[0].url }}"
+                     srcset="{{ craft.imagerx.srcset(transforms) }}"
+                     sizes="(max-width: 767px) 100vw, 480px"
+                     alt="Sebastian Matthew Nadeau" loading="eager" width="480" height="600">
+              {% else %}
+                <img src="{{ photo.getUrl() }}" alt="Sebastian Matthew Nadeau" loading="eager" width="480" height="600">
+              {% endif %}
+            </div>
+          {% endif %}
+        {% else %}
+          <div class="author-hero__photo author-hero__photo--placeholder"></div>
+        {% endif %}
+        <div class="author-hero__text">
+          <h1 class="author-hero__name">Sebastian Matthew Nadeau</h1>
+          <p class="author-hero__tagline">Graphic Designer, Web Developer, Philosopher. Ottawa, Canada.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {# The Story #}
+  <section class="section" data-reveal>
+    <div class="container container--reading">
+      <h2 class="section-heading">The story</h2>
+
+      {% if entry.fullBio ?? false %}
+        {{ entry.fullBio }}
+      {% else %}
+        <p>Sebastian Matthew Nadeau is an introspective thinker, writer, graphic designer, and web developer from Ottawa, Canada. He values relationships, education, philosophy, and creative expression. His reflections grow out of conversations, solitude, and lived experiences.</p>
+        <p>When he was a child, his elementary school teacher called him a philosopher. He noticed something most people don't notice in kids — a deep curiosity about life that went past the usual questions. That curiosity never went away. Over the years, Sebastian has spoken with people from many walks of life, learning from their perspectives while forming his own conclusions.</p>
+        <p>He believes that success is relative to each individual, and that true fulfillment comes from peace, virtue, and harmony. Character, to him, is formed through virtue — by how we engage with the world, remain true to our values, and live in balance with nature.</p>
+        <p>At times, he has felt the weight of loneliness and the search for meaning. Writing has been his way of finding clarity and peace.</p>
+      {% endif %}
+
+      <blockquote>
+        <p>"Yesterday I was clever, and I wanted to change the world. Today I am wise, so I am changing myself."</p>
+        <cite>— Rumi</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <div class="divider">&#9670;</div>
+
+  {# The Book — contributions #}
+  <section class="section section--cream-dark" data-reveal>
+    <div class="container container--reading">
+      <h2 class="section-heading">The book</h2>
+
+      <p><em>The Light Inside the Tunnel</em> is Sebastian's first book. In it, he introduces Consistencialism — a philosophy built not in a university but in grocery stores, on buses, and in conversations with strangers.</p>
+
+      <p>Among its contributions:</p>
+
+      <ul class="contributions-list">
+        <li><strong>Worth and dignity</strong> — that worth is inherent and untouchable, but dignity lives between people and depends on whether we choose to see each other.</li>
+        <li><strong>The gardener principle</strong> — that a just system does not tell people how to grow, but protects the soil so they can bloom on their own.</li>
+        <li><strong>The practice thesis</strong> — that you are what you practice, not what you intend, and that the beliefs that reach your hands are the only beliefs that matter.</li>
+        <li><strong>The relocation of spirit</strong> — that the spiritual world is not above us but between us.</li>
+        <li><strong>A redefinition of justice</strong> — as the preservation of harmony between people, threatened not by evil but by indifference.</li>
+        <li><strong>A challenge to Maslow</strong> — that psychological safety comes before physical safety.</li>
+        <li><strong>The philosophy of compassion</strong> — that compassion is the ability to see another person as an extension of yourself, so when they are wounded, you cry.</li>
+        <li><strong>A definition of wisdom</strong> — wisdom is knowing knowledge in practice.</li>
+      </ul>
+
+      <p>This work is not an autobiography, but a journey — an attempt to capture what it means to live with dignity, connection, and love.</p>
+    </div>
+  </section>
+
+  {# Design Meets Philosophy #}
+  <section class="section" data-reveal>
+    <div class="container container--reading">
+      <h2 class="section-heading">Design meets philosophy</h2>
+
+      {% if entry.designBackground ?? false %}
+        {{ entry.designBackground }}
+      {% else %}
+        <p>Sebastian runs <a href="https://skylightdesigns.ca" target="_blank" rel="noopener">Skylight Designs</a>, where he's spent years thinking about how to make things clear, beautiful, and true to what they represent. In design, he learned that form and content aren't two things — they're one thing seen from different angles. A logo that doesn't match the company it represents is a lie, no matter how beautiful it is.</p>
+        <p>The same turned out to be true for a life. Consistencialism grew directly out of that insight — what you practice is what you believe, what you make is who you are. That's why <em>The Light Inside the Tunnel</em> is a designed object, not just a collection of ideas. Every choice — the typography, the spacing, the structure — was made with the same care he brings to his design work.</p>
+        <p>Because if the book argues that practice matters more than intention, then the book itself had better practice what it preaches.</p>
+      {% endif %}
+    </div>
+  </section>
+
+  <div class="divider">&#9670;</div>
+
+  {# In His Own Words #}
+  <section class="section section--cream-dark" data-reveal>
+    <div class="container container--content text-center">
+      <h2 class="section-heading">In his own words</h2>
+
+      <p class="text-lead--italic">We are free to express ourselves authentically, so long as our way of life does not destroy life itself.</p>
+
+      <div class="declarations-grid">
+        <div class="declaration">
+          <p>"I believe in the soul of humanity.<br>
+          Love comes from the soul.<br>
+          When we treat each other with love,<br>
+          that lifts our spirits,<br>
+          where we can live in harmony."</p>
+          <p class="declaration__attribution">— Sebastian Matthew Nadeau</p>
+        </div>
+
+        <div class="declaration">
+          <p>"When we treat each other with love,<br>
+          the spirit of God works through us<br>
+          — not by force, but by volition.<br>
+          Love is filling both vessels<br>
+          from the same spring."</p>
+          <p class="declaration__attribution">— Sebastian Matthew Nadeau</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Connect #}
+  <section class="section" data-reveal>
+    <div class="container container--reading text-center">
+      <h2 class="section-heading">Connect</h2>
+      <p>Find Sebastian at <a href="https://skylightdesigns.ca" target="_blank" rel="noopener">skylightdesigns.ca</a></p>
+      {% set settings = siteSettings ?? null %}
+      {% if settings and settings.contactEmail %}
+        <a href="mailto:{{ settings.contactEmail }}" class="btn btn--primary mt-4">Say hello</a>
+      {% endif %}
+    </div>
+  </section>
+
+  {# Purchase CTA #}
+  <section class="section section--tunnel" data-reveal>
+    <div class="container container--reading text-center">
+      <p class="purchase-cta__heading">The book is where these ideas live.</p>
+      <a href="/get-the-book" class="btn btn--primary">Read the book</a>
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block jsonLd %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sebastian Matthew Nadeau",
+  "url": "{{ siteUrl }}about-the-author",
+  "jobTitle": "Writer and Graphic Designer",
+  "description": "Author of The Light Inside the Tunnel — A Philosophy for the Human Heart. Graphic designer at Skylight Designs, Ottawa, Canada.",
+  "sameAs": [
+    "https://skylightdesigns.ca"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ottawa",
+    "addressRegion": "ON",
+    "addressCountry": "CA"
+  },
+  "knowsAbout": ["Consistencialism", "Philosophy", "Graphic Design"]
+}
+</script>
+{% endblock %}
+
+{% block newsletter %}{% endblock %}

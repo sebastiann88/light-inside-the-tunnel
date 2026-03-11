@@ -1,0 +1,20 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 39434b3e-6dbd-4717-b50b-b501784b554d # Chapters
+handle: chapters
+maxAuthors: 1
+name: Chapters
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  ffd7cb28-4fcf-45d1-8bb6-7d0e05c32424: # Light Inside the Tunnel
+    enabledByDefault: true
+    hasUrls: true
+    template: chapters/_entry
+    uriFormat: 'chapters/{slug}'
+type: channel

@@ -1,0 +1,182 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  b82b81ae-6e1a-4903-a404-17c11f2fc3a7:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: ae44d946-f22b-45d3-b489-4bf4f67a259b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 23409cca-70dc-4233-9b13-ce2aef048145 # Synopsis
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4d162208-a60a-4691-948e-f3da38eec9e9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 7101f318-fa9c-4981-a882-36d32b6c4303 # Audience Text
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 719f9214-e5c8-490c-90be-eee3e21ecc41
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: b4f200b8-e4a1-4f57-b4b0-5acc28e709ca # Book Details
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c3964e6a-8b1f-4871-8f33-72500eb0a117
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 73e1d589-0993-49cd-b6c5-bfc9257367f2 # Excerpt Text
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1a11adf0-9a21-42c3-bd63-7b2f3c8c409c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 5b100d4e-1c3b-4349-8087-462e895bc8db # Consistencialism Section
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d47e0034-c0b1-4b42-b1aa-f4c3ef5b3adf
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: cbd9d616-ced9-4342-93c9-030b80d86e9e # Related Chapters
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c12f1477-54c5-46a0-9280-92c42201e6ae
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 553d1895-c2d3-4bc5-b7bb-df135a778fa9 # CTA Text
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: afd9ae98-25b7-4640-ae35-7a282cfb677d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 67a0b334-099e-4439-b791-723b6b21c633 # CTA URL
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 253be704-f1ba-4985-b5bc-bb21986f6e55
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 44feb3c7-4ea4-4d59-b511-6f94193484ea
+        userCondition: null
+    thumbFieldKey: null
+handle: aboutTheBook
+hasTitleField: true
+icon: null
+name: 'About the Book'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

@@ -1,0 +1,478 @@
+{#
+  Homepage — The Light Inside the Tunnel
+  Emotional entry point: hero → book intro → featured quotes → author teaser → newsletter → purchase CTA
+#}
+
+{% extends '_layouts/base' %}
+
+{% block title %}{{ entry.title ?? 'The Light Inside the Tunnel — A Philosophy for the Human Heart' }}{% endblock %}
+
+{% block bodyClass %}page-home{% endblock %}
+
+{% block head %}
+  {% do seomatic.meta.seoTitle("The Light Inside the Tunnel — A Philosophy for the Human Heart") %}
+  {% do seomatic.meta.seoDescription("A book about what happens when you start living consistently with who you truly are. By Sebastian Matthew Nadeau. Not self-help. Not academia. Just honest.") %}
+  {% do seomatic.meta.seoKeywords("consistencialism, philosophy book, human heart, authentic living, Sebastian Matthew Nadeau") %}
+
+  {# Open Graph #}
+  {% do seomatic.meta.ogType("website") %}
+  {% do seomatic.meta.ogTitle("The Light Inside the Tunnel — A Philosophy for the Human Heart") %}
+  {% do seomatic.meta.ogDescription("You are what you practice. Not what you intend. Not what you declare. A book by Sebastian Matthew Nadeau.") %}
+
+  {# Twitter Card #}
+  {% do seomatic.meta.twitterCard("summary_large_image") %}
+  {% do seomatic.meta.twitterTitle("The Light Inside the Tunnel") %}
+  {% do seomatic.meta.twitterDescription("A philosophy for the human heart. By Sebastian Matthew Nadeau.") %}
+
+  <script src="/js/p5.min.js"></script>
+{% endblock %}
+
+{% block content %}
+
+  {# Hero Section — dark tunnel with constellation of souls animation #}
+  <section class="hero hero--constellation">
+    {# p5.js canvas renders here as background #}
+    <div id="constellation-canvas"></div>
+
+    {# Hero text content — layered above the canvas #}
+    <div class="hero__content">
+      <h1 class="hero__quote">
+        {{ entry.heroHeadline ?? 'You are what you practice.' }}
+      </h1>
+      <p class="hero__subline">
+        {{ entry.heroSubheadline ?? 'Not what you intend. Not what you declare.' }}
+      </p>
+      <p class="hero__philosophy">A philosophy for the human heart.</p>
+      <div class="hero__cta">
+        <a href="{{ entry.ctaUrl ?? '/the-book' }}" class="btn btn--primary">
+          {{ entry.ctaText ?? 'Discover the book' }}
+        </a>
+      </div>
+    </div>
+
+    {# Constellation controls — right side panel #}
+    <button class="constellation-toggle" id="constellation-toggle" aria-label="Toggle constellation controls">
+      <svg class="constellation-toggle__icon" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="4" cy="4" r="1.5" fill="currentColor"/>
+        <circle cx="16" cy="6" r="1.5" fill="currentColor"/>
+        <circle cx="10" cy="14" r="1.5" fill="currentColor"/>
+        <circle cx="6" cy="10" r="1" fill="currentColor" opacity="0.6"/>
+        <line x1="4" y1="4" x2="16" y2="6" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+        <line x1="16" y1="6" x2="10" y2="14" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+        <line x1="4" y1="4" x2="6" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+      </svg>
+      <span class="constellation-toggle__label">Play with the stars</span>
+    </button>
+
+    <aside class="constellation-controls" id="constellation-controls" aria-hidden="true">
+      <div class="constellation-controls__inner">
+        <button class="constellation-controls__close" id="constellation-close" type="button" aria-label="Close constellation controls">&times;</button>
+        <p class="constellation-controls__title">Constellation of Souls</p>
+        <p class="constellation-controls__subtitle">Each star holds its position. Together they form the pattern.</p>
+
+        <div class="constellation-controls__group">
+          <label>Seed</label>
+          <input type="text" id="cos-seed" class="constellation-controls__seed" value="12345">
+          <div class="constellation-controls__seed-nav">
+            <button class="constellation-controls__btn" onclick="cosPrevSeed()">&#8592;</button>
+            <button class="constellation-controls__btn" onclick="cosNextSeed()">&#8594;</button>
+            <button class="constellation-controls__btn constellation-controls__btn--wide" onclick="cosRandomSeed()">Random</button>
+          </div>
+        </div>
+
+        <div class="constellation-controls__group">
+          <label>Souls <span id="cos-starCount-val">115</span></label>
+          <input type="range" id="cos-starCount" min="30" max="200" step="5" value="115">
+        </div>
+
+        <div class="constellation-controls__group">
+          <label>Connection <span id="cos-connectionDist-val">125</span></label>
+          <input type="range" id="cos-connectionDist" min="40" max="200" step="5" value="125">
+        </div>
+
+        <div class="constellation-controls__group">
+          <label>Wandering <span id="cos-wanderStrength-val">0.5</span></label>
+          <input type="range" id="cos-wanderStrength" min="0.1" max="2.0" step="0.1" value="0.5">
+        </div>
+
+        <div class="constellation-controls__group">
+          <label>Warmth <span id="cos-warmth-val">0.5</span></label>
+          <input type="range" id="cos-warmth" min="0.0" max="1.0" step="0.05" value="0.5">
+        </div>
+
+        <button class="constellation-controls__btn constellation-controls__btn--wide" onclick="cosReset()">Reset</button>
+      </div>
+    </aside>
+  </section>
+
+  {# The Book in a Breath #}
+  <section class="section" data-reveal>
+    <div class="container container--reading text-center">
+        <p class="text-lead">This is a book about what happens when you stop performing your beliefs and start living them. It's about the distance between what you say matters and what your hands actually do. And it's about what you find when you close that gap — not perfection, but something honest. Something that feels like coming home.</p>
+        <p class="text-lead"><em>The Light Inside the Tunnel</em> was written for anyone who's ever sat in the dark and wondered if there's a point to all of this. There is. But it's not where you were told to look.</p>
+      <div class="divider">&#9670;</div>
+    </div>
+  </section>
+
+    {# What is Consistencialism? #}
+  <section class="section section--cream-dark" id="consistencialism" data-reveal>
+    <div class="container container--content">
+      <h2 class="section-heading text-center">Consistencialism — A Humanistic Philosophy</h2>
+
+      <p class="text-lead text-center" style="max-width: var(--width-reading); margin-inline: auto;"><strong>The study of how our thoughts, psyche, and inner emotional state can influence how we form our exterior environments.</strong></p>
+
+      {# Two declarations — side by side on desktop, stacked on mobile #}
+      <div class="declarations-grid">
+        <div class="declaration">
+          <p>"I believe in the soul of humanity.<br>
+          Love comes from the soul.<br>
+          When we treat each other with love,<br>
+          that lifts our spirits,<br>
+          where we can live in harmony."</p>
+          <p class="declaration__attribution">— Sebastian Matthew Nadeau</p>
+        </div>
+
+        <div class="declaration">
+          <p>"When we treat each other with love,<br>
+          the spirit of God works through us<br>
+          — not by force, but by volition.<br>
+          Love is filling both vessels<br>
+          from the same spring."</p>
+          <p class="declaration__attribution">— Sebastian Matthew Nadeau</p>
+        </div>
+      </div>
+
+      {% if entry.consistencialismSection ?? false %}
+        {{ entry.consistencialismSection }}
+      {% else %}
+        <p>We are free to express ourselves authentically, so long as our way of life does not destroy life itself.</p>
+      {% endif %}
+    </div>
+  </section>
+
+  {# Featured Quotes — 3-column grid desktop, scroll-snap mobile #}
+  {% set quotes = entry.featuredQuotes is defined ? entry.featuredQuotes.all() : [] %}
+  <section class="section section--cream-dark" data-reveal>
+    <div class="container container--content">
+      {% if quotes|length %}
+        <div class="quote-grid">
+          {% for quote in quotes|slice(0, 3) %}
+            {% include '_partials/quote-card' with { quote: quote } only %}
+          {% endfor %}
+        </div>
+      {% else %}
+        {# Fallback quotes until CMS content is populated #}
+        <div class="quote-grid">
+          <div class="quote-card">
+            <p class="quote-card__text">"Wisdom is knowing knowledge in practice."</p>
+          </div>
+          <div class="quote-card">
+            <p class="quote-card__text">"The beliefs that reach your hands are the only beliefs that matter."</p>
+          </div>
+          <div class="quote-card">
+            <p class="quote-card__text">"Spirit is not above us. It is between us."</p>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+  {# About the Author — teaser #}
+  <section class="section author-teaser" data-reveal>
+    <div class="container container--content">
+      <div class="author-teaser__grid">
+        {% set authorEntry = craft.entries.section('authorBio').one() ?? null %}
+        {% if authorEntry and (authorEntry.authorPhoto ?? null) and authorEntry.authorPhoto|length %}
+          {% set photo = authorEntry.authorPhoto.one() %}
+          {% if photo %}
+            <div class="author-teaser__photo">
+              {% if craft.app.plugins.getPlugin('imager-x') %}
+                {% set transforms = craft.imagerx.transformImage(photo, 'authorTeaser') %}
+                <img src="{{ transforms[0].url }}"
+                     srcset="{{ craft.imagerx.srcset(transforms) }}"
+                     sizes="(max-width: 767px) 100vw, 400px"
+                     alt="Sebastian Matthew Nadeau" loading="lazy" width="400" height="500">
+              {% else %}
+                <img src="{{ photo.getUrl() }}" alt="Sebastian Matthew Nadeau" loading="lazy" width="400" height="500">
+              {% endif %}
+            </div>
+          {% endif %}
+        {% else %}
+          <div class="author-teaser__photo author-teaser__photo--placeholder"></div>
+        {% endif %}
+        <div class="author-teaser__text">
+          <p class="text-lead">Sebastian Matthew Nadeau is a graphic designer and philosopher from Ottawa, Canada. He wrote this book because he'd been in the tunnel — and because the light he found there wasn't what anyone had promised him it would be. It was better. It was real.</p>
+          <a href="/about-the-author" class="btn btn--primary">Meet the author</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Get the Book — purchase CTA #}
+  <section class="section section--tunnel" data-reveal>
+    <div class="container container--reading text-center">
+      <p class="purchase-cta__heading">The light is already inside you.</p>
+      <a href="{{ entry.ctaUrl ?? '/the-book' }}" class="btn btn--primary">
+        {{ entry.ctaText ?? 'Get the book' }}
+      </a>
+    </div>
+  </section>
+
+  {# Newsletter — after purchase CTA, before footer #}
+  {% block newsletter %}{% endblock %}
+  {% set settings = siteSettings ?? null %}
+  {% if settings and settings.newsletterFormAction %}
+    {% include '_partials/newsletter-signup' %}
+  {% else %}
+    {# Fallback newsletter section when Brevo form action isn't configured yet #}
+    <section class="section section--cream-dark" data-reveal>
+      <div class="container container--reading newsletter">
+        <h2 class="newsletter__heading">Stay in the light</h2>
+        <p class="text-lead text-muted">
+          New reflections, quotes, and writing from Sebastian — delivered when there's something worth saying. No schedule. No spam. Just honest words.
+        </p>
+      </div>
+    </section>
+  {% endif %}
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+window.addEventListener('load', function() {
+  // Constellation of Souls — embedded in hero banner
+  const cosParams = { seed: 12345, starCount: 115, connectionDist: 125, wanderStrength: 0.5, warmth: 0.5 };
+  const cosDefaults = {...cosParams};
+  let cosStars = [], cosTrails = [], cosT = 0;
+
+  const palette = {
+    bg: [16, 22, 42],
+    stars: [[212,218,206],[200,190,160],[180,160,120],[139,115,85],[107,123,94],[160,180,200]],
+    connection: [180,175,160],
+    glow: [220,210,190]
+  };
+
+  const cosSketch = function(p) {
+    class Star {
+      constructor(x, y, idx) {
+        this.x = x; this.y = y; this.homeX = x; this.homeY = y; this.idx = idx;
+        this.size = p.random(2, 5);
+        this.brightness = p.random(150, 255);
+        this.twinkleSpeed = p.random(0.01, 0.04);
+        this.twinkleOffset = p.random(p.TWO_PI);
+        this.wanderAngle = p.random(p.TWO_PI);
+        this.colorIdx = p.floor(p.random(palette.stars.length));
+        this.pulse = 0; this.connections = 0;
+      }
+      update() {
+        this.wanderAngle += p.random(-0.3, 0.3) * cosParams.wanderStrength;
+        let wx = p.cos(this.wanderAngle) * cosParams.wanderStrength * 0.3;
+        let wy = p.sin(this.wanderAngle) * cosParams.wanderStrength * 0.3;
+        let dx = this.homeX - this.x, dy = this.homeY - this.y;
+        this.x += wx + dx * 0.005; this.y += wy + dy * 0.005;
+        this.x = p.constrain(this.x, 40, p.width - 40);
+        this.y = p.constrain(this.y, 40, p.height - 40);
+        this.brightness = p.map(p.sin(cosT * this.twinkleSpeed + this.twinkleOffset), -1, 1, 120, 255);
+        this.pulse *= 0.95; this.connections = 0;
+      }
+      draw() {
+        let col = palette.stars[this.colorIdx];
+        let warm = cosParams.warmth;
+        let glowSize = this.size * 4 + this.pulse * 3;
+        p.noStroke();
+        for (let g = glowSize; g > 0; g -= 2) {
+          let a = p.map(g, 0, glowSize, 30, 0);
+          p.fill(col[0]+warm*30, col[1]+warm*15, col[2]-warm*20, a*(this.brightness/255));
+          p.ellipse(this.x, this.y, g, g);
+        }
+        p.fill(Math.min(255,col[0]+50), Math.min(255,col[1]+40), Math.min(255,col[2]+20), this.brightness);
+        p.ellipse(this.x, this.y, this.size, this.size);
+        p.fill(255, 255, 240, this.brightness * 0.8);
+        p.ellipse(this.x, this.y, this.size * 0.4, this.size * 0.4);
+      }
+    }
+
+    function tooClose(x, y, minDist) {
+      for (let s of cosStars) { if (p.dist(x, y, s.x, s.y) < minDist) return true; }
+      return false;
+    }
+
+    function initSystem() {
+      p.randomSeed(cosParams.seed); p.noiseSeed(cosParams.seed);
+      cosStars = []; cosTrails = []; cosT = 0;
+      for (let i = 0; i < cosParams.starCount; i++) {
+        let attempts = 0, x, y;
+        do { x = p.random(60, p.width - 60); y = p.random(60, p.height - 60); attempts++; }
+        while (attempts < 50 && tooClose(x, y, 20));
+        cosStars.push(new Star(x, y, i));
+      }
+      p.background(palette.bg[0], palette.bg[1], palette.bg[2]);
+      drawBgStars();
+    }
+    window._cosInitSystem = initSystem;
+
+    function drawBgStars() {
+      p.randomSeed(cosParams.seed + 999);
+      for (let i = 0; i < 400; i++) {
+        let x = p.random(p.width), y = p.random(p.height);
+        p.fill(200, 200, 210, p.random(20, 60)); p.noStroke();
+        p.ellipse(x, y, p.random(0.5, 1.5));
+      }
+      for (let i = 0; i < 5; i++) {
+        let nx = p.random(p.width), ny = p.random(p.height), nr = p.random(100, 300);
+        for (let r = nr; r > 0; r -= 3) {
+          let a = p.map(r, 0, nr, 3, 0);
+          let ci = p.floor(p.random(palette.stars.length));
+          p.fill(palette.stars[ci][0], palette.stars[ci][1], palette.stars[ci][2], a);
+          p.ellipse(nx, ny, r, r * 0.7);
+        }
+      }
+    }
+
+    p.setup = function() {
+      const container = document.getElementById('constellation-canvas');
+      const hero = container.closest('.hero--constellation');
+      const w = container.offsetWidth || hero.offsetWidth || window.innerWidth;
+      const h = container.offsetHeight || hero.offsetHeight || window.innerHeight * 0.8;
+      let canvas = p.createCanvas(w, h);
+      canvas.parent('constellation-canvas');
+      canvas.style('display', 'block');
+      p.pixelDensity(1);
+      initSystem();
+    };
+
+    p.windowResized = function() {
+      const container = document.getElementById('constellation-canvas');
+      if (container) {
+        const hero = container.closest('.hero--constellation');
+        const w = container.offsetWidth || hero.offsetWidth || window.innerWidth;
+        const h = container.offsetHeight || hero.offsetHeight || window.innerHeight * 0.8;
+        p.resizeCanvas(w, h);
+        initSystem();
+      }
+    };
+
+    p.draw = function() {
+      p.fill(palette.bg[0], palette.bg[1], palette.bg[2], 25);
+      p.noStroke(); p.rect(0, 0, p.width, p.height);
+
+      if (p.frameCount % 60 === 0) {
+        p.randomSeed(cosParams.seed + 999);
+        for (let i = 0; i < 400; i++) {
+          p.fill(200, 200, 210, p.random(15, 40)); p.noStroke();
+          p.ellipse(p.random(p.width), p.random(p.height), p.random(0.5, 1.5));
+        }
+      }
+
+      cosT++;
+      for (let s of cosStars) s.update();
+
+      for (let i = 0; i < cosStars.length; i++) {
+        for (let j = i + 1; j < cosStars.length; j++) {
+          let d = p.dist(cosStars[i].x, cosStars[i].y, cosStars[j].x, cosStars[j].y);
+          if (d < cosParams.connectionDist) {
+            let alpha = p.map(d, 0, cosParams.connectionDist, 60, 0);
+            let w = p.map(d, 0, cosParams.connectionDist, 1.5, 0.2);
+            let warm = cosParams.warmth;
+            p.stroke(palette.connection[0]+warm*30, palette.connection[1]+warm*10, palette.connection[2]-warm*30, alpha);
+            p.strokeWeight(w);
+            p.line(cosStars[i].x, cosStars[i].y, cosStars[j].x, cosStars[j].y);
+            cosStars[i].pulse = Math.max(cosStars[i].pulse, p.map(d, 0, cosParams.connectionDist, 2, 0));
+            cosStars[j].pulse = Math.max(cosStars[j].pulse, p.map(d, 0, cosParams.connectionDist, 2, 0));
+            cosStars[i].connections++; cosStars[j].connections++;
+          }
+        }
+      }
+
+      for (let s of cosStars) s.draw();
+
+      if (p.frameCount % 3 === 0) {
+        for (let i = 0; i < cosStars.length; i++) {
+          for (let j = i + 1; j < cosStars.length; j++) {
+            let d = p.dist(cosStars[i].x, cosStars[i].y, cosStars[j].x, cosStars[j].y);
+            if (d < cosParams.connectionDist * 0.6 && p.random() < 0.02) {
+              cosTrails.push({ x: cosStars[i].x, y: cosStars[i].y, tx: cosStars[j].x, ty: cosStars[j].y, progress: 0, speed: p.random(0.01, 0.03), size: p.random(1, 2.5) });
+            }
+          }
+        }
+      }
+
+      for (let i = cosTrails.length - 1; i >= 0; i--) {
+        let tr = cosTrails[i]; tr.progress += tr.speed;
+        if (tr.progress > 1) { cosTrails.splice(i, 1); continue; }
+        let px = p.lerp(tr.x, tr.tx, tr.progress), py = p.lerp(tr.y, tr.ty, tr.progress);
+        p.fill(255, 250, 230, p.sin(tr.progress * p.PI) * 150);
+        p.noStroke(); p.ellipse(px, py, tr.size);
+      }
+      if (cosTrails.length > 200) cosTrails.splice(0, 50);
+    };
+  };
+
+  new p5(cosSketch);
+
+  // Controls toggle
+  const toggle = document.getElementById('constellation-toggle');
+  const panel = document.getElementById('constellation-controls');
+  const closeBtn = document.getElementById('constellation-close');
+
+  function openPanel() {
+    panel.classList.add('is-open');
+    panel.setAttribute('aria-hidden', 'false');
+    toggle.classList.add('is-active', 'is-hidden');
+    document.addEventListener('click', clickOutside);
+  }
+
+  function closePanel() {
+    panel.classList.remove('is-open');
+    panel.setAttribute('aria-hidden', 'true');
+    toggle.classList.remove('is-active', 'is-hidden');
+    document.removeEventListener('click', clickOutside);
+  }
+
+  function clickOutside(e) {
+    if (!panel.contains(e.target) && !toggle.contains(e.target)) {
+      closePanel();
+    }
+  }
+
+  toggle.addEventListener('click', function() {
+    if (panel.classList.contains('is-open')) {
+      closePanel();
+    } else {
+      openPanel();
+    }
+  });
+
+  closeBtn.addEventListener('click', closePanel);
+
+  // Slider bindings
+  ['starCount','connectionDist','wanderStrength','warmth'].forEach(function(key) {
+    document.getElementById('cos-' + key).addEventListener('input', function() {
+      cosParams[key] = parseFloat(this.value);
+      document.getElementById('cos-' + key + '-val').textContent = this.value;
+      if (key === 'starCount') window._cosInitSystem();
+    });
+  });
+
+  // Seed controls
+  document.getElementById('cos-seed').addEventListener('change', function() {
+    let v = parseInt(this.value);
+    if (v && v > 0) { cosParams.seed = v; window._cosInitSystem(); }
+    else this.value = cosParams.seed;
+  });
+
+  window.cosPrevSeed = function() { cosParams.seed = Math.max(1, cosParams.seed - 1); document.getElementById('cos-seed').value = cosParams.seed; window._cosInitSystem(); };
+  window.cosNextSeed = function() { cosParams.seed++; document.getElementById('cos-seed').value = cosParams.seed; window._cosInitSystem(); };
+  window.cosRandomSeed = function() { cosParams.seed = Math.floor(Math.random() * 999999) + 1; document.getElementById('cos-seed').value = cosParams.seed; window._cosInitSystem(); };
+  window.cosReset = function() {
+    Object.assign(cosParams, cosDefaults);
+    document.getElementById('cos-seed').value = cosParams.seed;
+    ['starCount','connectionDist','wanderStrength','warmth'].forEach(function(key) {
+      document.getElementById('cos-' + key).value = cosParams[key];
+      document.getElementById('cos-' + key + '-val').textContent = cosParams[key];
+    });
+    window._cosInitSystem();
+  };
+});
+</script>
+{% endblock %}

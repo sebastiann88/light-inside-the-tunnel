@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="{{ currentSite.language }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {# SEOmatic meta tags #}
+  {% hook 'seomaticRender' %}
+
+  <title>{% block title %}{{ entry.title ?? siteName }}{% endblock %} — The Light Inside the Tunnel</title>
+
+  {# Font preloads (critical weights only) #}
+  <link rel="preload" href="/fonts/jost-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/lora-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  {# Preconnect for Snipcart (if enabled) #}
+  {% if getenv('SNIPCART_API_KEY') %}
+    <link rel="preconnect" href="https://cdn.snipcart.com" crossorigin>
+  {% endif %}
+
+  {# Critical CSS — above-fold styles inlined for fast first paint #}
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:100%;scroll-behavior:smooth}
+    @media(min-width:768px){html{font-size:112.5%}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+    body{font-family:'Lora',Georgia,serif;font-size:1rem;line-height:1.7;color:#3D3632;background-color:#FAF7F2;-webkit-font-smoothing:antialiased}
+    .skip-link{position:absolute;top:-100%;left:var(--space-4,1rem);z-index:999;padding:.5rem 1rem;background:#3D3632;color:#FAF7F2;border-radius:.25rem;font-size:.875rem;text-decoration:none}
+    .skip-link:focus{top:var(--space-4,1rem)}
+    .site-nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:.75rem 1.5rem;background-color:rgba(250,247,242,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid rgba(61,54,50,.06);transition:background-color .3s ease,box-shadow .3s ease}
+    .hero{display:flex;align-items:center;justify-content:center;min-height:80vh;padding:3rem 1.5rem;text-align:center;position:relative;overflow:hidden;background-color:#121620;color:#D4DAC8}
+  </style>
+
+  {# Full stylesheets — deferred for non-blocking load #}
+  <link rel="stylesheet" href="/css/design-tokens.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="/css/design-tokens.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </noscript>
+
+  {% block head %}{% endblock %}
+
+  {# JSON-LD Structured Data — WebSite (global) + page-specific overrides #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "The Light Inside the Tunnel",
+    "url": "{{ siteUrl }}",
+    "description": "A Philosophy for the Human Heart by Sebastian Matthew Nadeau",
+    "author": {
+      "@type": "Person",
+      "name": "Sebastian Matthew Nadeau",
+      "url": "{{ siteUrl }}about-the-author",
+      "jobTitle": "Writer and Graphic Designer",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ottawa",
+        "addressCountry": "CA"
+      }
+    }
+  }
+  </script>
+  {% block jsonLd %}{% endblock %}
+</head>
+<body class="{% block bodyClass %}{% endblock %}">
+
+  {# Skip to content (accessibility) #}
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  {# Navigation #}
+  {% include '_partials/nav' %}
+
+  {# Main content #}
+  <main id="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  {# Newsletter signup #}
+  {% block newsletter %}
+    {% include '_partials/newsletter-signup' %}
+  {% endblock %}
+
+  {# Footer #}
+  {% include '_partials/footer' %}
+
+  {# Scripts #}
+  <script src="/js/main.js" defer></script>
+
+  {# Snipcart — loaded site-wide for cart icon in nav #}
+  {% set snipcartKey = getenv('SNIPCART_API_KEY') %}
+  {% if snipcartKey %}
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.css" />
+    <div hidden id="snipcart" data-api-key="{{ snipcartKey }}" data-currency="cad"></div>
+    <script async src="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.js"></script>
+  {% endif %}
+
+  {% block scripts %}{% endblock %}
+
+</body>
+</html>

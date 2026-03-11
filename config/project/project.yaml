@@ -1,0 +1,126 @@
+dateModified: 1773188632
+email:
+  fromEmail: sebastian@skylightdesigns.ca
+  fromName: 'The Light Inside the Tunnel'
+  transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    1d021f30-e3b1-4849-b4fd-99dfae3af1fb: 'Part Title' # Part Title
+    1f3463dd-2397-477a-8f01-082ff09585d1: 'Chapter Type' # Chapter Type
+    2a160376-d3d9-4e17-b9a3-9f774ecb8b75: Quotes # Quotes
+    2d2a7a80-cffd-47ce-a1f8-ddbf9e57d640: 'Site Logo' # Site Logo
+    3a857588-7068-4c4f-9d55-196813a6c2e3: Testimonials # Testimonials
+    3dbfb26a-3d2b-4234-b573-7d2bad4da5ab: 'Featured Chapters' # Featured Chapters
+    3f891820-322d-47c9-afa3-7d8dd9f25162: 'Newsletter Form Action URL' # Newsletter Form Action URL
+    5b100d4e-1c3b-4349-8087-462e895bc8db: 'Consistencialism Section' # Consistencialism Section
+    05c271ed-f132-4a47-afe1-5e565a93b768: 'Blog Categories' # Blog Categories
+    5ecc5a6f-0360-4201-b030-a22a6549b701: 'The Light Inside the Tunnel' # The Light Inside the Tunnel
+    6a00b1f2-a2d2-4379-ba2d-bc894138e7df: Chapters # Chapters
+    6ad5c78a-4402-4843-8a62-8324f042de93: Excerpt # Excerpt
+    6d98af18-8ca1-499e-8a20-f1bd1eb3b4b5: 'Chapter Summary' # Chapter Summary
+    6e9480b2-ab9f-4b16-99a2-f0e523d2b626: 'Intro Text' # Intro Text
+    6fd4a654-28b5-4c3b-bda4-36516c3a035b: 'Blog Category' # Blog Category
+    7fa80a0e-9b77-40aa-aec9-d88bb44dabc2: 'Author Name' # Author Name
+    7fbef79d-faff-466a-8433-c4b77a05d96b: 'Philosophical Contributions' # Philosophical Contributions
+    9a5623e5-3e02-41d7-aedb-a24b40f14268: 'Reviewer Name' # Reviewer Name
+    9bbd67a1-2848-4dd1-8b61-a72efafab488: 'Source Chapter' # Source Chapter
+    9e336723-f548-425c-a800-f3d49833ef37: 'Author Bio' # Author Bio
+    13ba2072-41b5-4fbf-af6f-dcf687ddba12: 'About the Book' # About the Book
+    25b9a42e-c336-4ce8-836f-2774051b8b66: 'Site Logo Alt' # Site Logo Alt
+    27d23471-d598-474c-804c-27cedf05d513: 'Book Overview' # Book Overview
+    39eb38c0-1b43-4299-909b-08c135806922: 'Blog Content' # Blog Content
+    42e4cf20-f7f4-419e-85fa-9b524ebb34b5: 'Philosophical Contributions' # Philosophical Contributions
+    43deeb03-d0f6-4acd-b7b3-ad719e296f1e: Blog # Blog
+    67a0b334-099e-4439-b791-723b6b21c633: 'CTA URL' # CTA URL
+    67ba0c31-c0d1-4950-980c-2ad63cc29878: 'Chapter Image' # Chapter Image
+    73e1d589-0993-49cd-b6c5-bfc9257367f2: 'Excerpt Text' # Excerpt Text
+    84aa7e6e-7e89-44ec-9197-2155404d9e12: 'Is Featured' # Is Featured
+    93e59876-3b5e-4d97-8ec5-3ecf573df7e1: 'Source URL' # Source URL
+    139de7b9-f26c-407f-a6ba-8dd118463162: 'Author Photo' # Author Photo
+    452f10e2-3e96-4822-a804-a3ce2a1e4590: 'Copyright Text' # Copyright Text
+    522a73ec-3546-4956-bb86-1f26758cbda0: 'Book Overview' # Book Overview
+    528c8366-391c-4bff-9942-c82a2dfa0d13: 'Full Bio' # Full Bio
+    553d1895-c2d3-4bc5-b7bb-df135a778fa9: 'CTA Text' # CTA Text
+    564d8823-dbcf-46b9-9519-3238a5b60c71: 'Author Bio' # Author Bio
+    641ff449-3ba9-458d-85d5-587d093fd685: Era # Era
+    0656b3b9-08dc-4127-bb2c-ade9d5ba76bd: 'Short Bio' # Short Bio
+    981adf92-9d36-4938-b330-e1588a82e824: 'Featured Image' # Featured Image
+    1116cdb9-eb55-47ad-8f66-ff1ef160614b: 'Newsletter Headline' # Newsletter Headline
+    2562fd01-16f6-4c79-8c0f-b10b890b551b: 'Book Cover Image' # Book Cover Image
+    3340bae5-e8b4-411f-a662-7b3266b330fd: 'Social Links' # Social Links
+    4646b163-ee3a-48b6-ab03-2217fba74f16: 'Purchase Options' # Purchase Options
+    6195f90c-7404-4d08-a937-b742f8416182: Motivation # Motivation
+    7101f318-fa9c-4981-a882-36d32b6c4303: 'Audience Text' # Audience Text
+    7189bdbb-52c9-4d17-9d1e-8df0e9f6ff9d: 'Quote Attribution' # Quote Attribution
+    9897ffa1-d0e2-4d0e-be69-8dc2b7cadc62: 'Pull Quote Attribution' # Pull Quote Attribution
+    16222d15-85f9-4767-9910-27cd3312fb82: 'Contact Email' # Contact Email
+    23409cca-70dc-4233-9b13-ce2aef048145: Synopsis # Synopsis
+    39434b3e-6dbd-4717-b50b-b501784b554d: Chapters # Chapters
+    76833f67-fcae-4883-b4a2-fc9a874491a1: 'Purchase Links' # Purchase Links
+    81925ef6-9655-4e70-97fb-ba12a2e94f9c: Testimonials # Testimonials
+    309862c0-9049-4d8e-add1-5f914596c6fe: 'Testimonial Text' # Testimonial Text
+    452095d4-f12b-4752-9553-f5e316a3fdd4: 'Contribution Summary' # Contribution Summary
+    3859370f-e1df-416f-986f-762a4e445a45: Rating # Rating
+    29181406-e51e-4829-8682-01b5492e17d1: 'Newsletter Provider' # Newsletter Provider
+    a9ea3817-d5ce-47bf-80ae-7a90f2107614: 'Chapter Content' # Chapter Content
+    a1217a2a-7601-4418-b85a-2412f92b08cd: 'Reviewer Title' # Reviewer Title
+    aef4ea15-aa5d-40ca-b428-8f558a31c96a: 'Design Background' # Design Background
+    b1d5224a-6d4b-44ae-86b0-73b8df47bbf4: 'Part Number' # Part Number
+    b4f200b8-e4a1-4f57-b4b0-5acc28e709ca: 'Book Details' # Book Details
+    b8f0ea4e-fb2a-4302-a72b-08108d064327: 'Site Settings' # Site Settings
+    b2112c0e-7f4e-47f3-978d-3feac7e6107c: 'Book Description' # Book Description
+    b2675f1a-bc96-439f-9b3b-a649c7da1bd6: 'Hero Subheadline' # Hero Subheadline
+    c03118ab-7037-45bd-b434-5f6280bedceb: 'Hero Headline' # Hero Headline
+    c8f51d95-01e0-4ece-bd6e-2e504b89677f: Attribution # Attribution
+    c63bcd1d-d49b-4d9d-a1b1-b8b68fce2990: 'Contributor Image' # Contributor Image
+    c534259d-8396-4e35-aa5d-54ab5a589dcc: 'Newsletter Subtext' # Newsletter Subtext
+    cbd9d616-ced9-4342-93c9-030b80d86e9e: 'Related Chapters' # Related Chapters
+    cd4b610f-b238-44cd-8718-3adf8104e60e: 'About the Book' # About the Book
+    d3b572f1-41e8-4263-b3a0-e9113d0d7d34: 'Context Note' # Context Note
+    d829f941-d1ad-4723-aea5-5415aac60418: 'Contributor Name' # Contributor Name
+    da210603-c155-47bf-95af-60a5b7bd180e: 'Hero Image' # Hero Image
+    dffa6e21-11f9-4a87-9109-ab1dd51b8c1f: 'Source Name' # Source Name
+    e3bfa31f-a518-4622-b6f3-b19059c7ac40: 'Quote Text' # Quote Text
+    e8ad02c2-1b76-40ca-b081-26b20d83f91e: 'Author Location' # Author Location
+    e49c3668-cb6d-49f0-bf0c-08414ace13ee: Blog # Blog
+    eb085842-1084-4074-b267-29d861f2b040: 'Chapter Number' # Chapter Number
+    ee0ebf73-784a-464f-a257-c1645b02eb02: 'Key Quote' # Key Quote
+    f9b37d74-f8cb-4364-907b-f6adffe2d770: 'Featured Quotes' # Featured Quotes
+    fa7c1366-0395-42c4-93af-119915883b7c: 'Pull Quote' # Pull Quote
+    fa2464ae-f4f6-4d59-8ad8-6868c067627c: Quotes # Quotes
+    fdf33491-eefe-45a1-bf41-2223d29a624a: 'Footer Text' # Footer Text
+    ffb3a309-09c2-4f2b-af2e-4fc8c55f4dc1: 'Related Contributions' # Related Contributions
+    ffd7cb28-4fcf-45d1-8bb6-7d0e05c32424: 'Light Inside the Tunnel' # Light Inside the Tunnel
+plugins:
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 5.0.0.1
+  imager-x:
+    edition: lite
+    enabled: true
+    licenseKey: 3MK4X2VDI1QMV6T77NXUICHB
+    schemaVersion: 4.0.0
+  seomatic:
+    edition: standard
+    enabled: true
+    licenseKey: 73GGMTB6YLFPJSOO72YN1SLC
+    schemaVersion: 3.0.13
+  snipcart:
+    edition: standard
+    enabled: true
+    licenseKey: WHZIC5M6ZIPXTUKEO8E4DL26
+    schemaVersion: 1.1.0
+system:
+  edition: solo
+  live: true
+  name: 'The Light Inside the Tunnel'
+  schemaVersion: 5.9.0.8
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  require2fa: false
+  requireEmailVerification: true

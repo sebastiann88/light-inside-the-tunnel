@@ -1,0 +1,216 @@
+{#
+  Get the Book — /get-the-book
+  Purchase page with Snipcart buy buttons
+  Uses purchaseOptions table field from the entry's CMS fields
+#}
+
+{% extends '_layouts/base' %}
+
+{% block title %}Get the Book — The Light Inside the Tunnel{% endblock %}
+
+{% block bodyClass %}page-purchase{% endblock %}
+
+{% block head %}
+  {% do seomatic.meta.seoTitle("Get the Book — The Light Inside the Tunnel") %}
+  {% do seomatic.meta.seoDescription("Order The Light Inside the Tunnel by Sebastian Matthew Nadeau — directly from the author. A philosophy for the human heart. Available in print and ebook.") %}
+  {% do seomatic.meta.seoKeywords("buy light inside the tunnel, where to buy, book purchase, Sebastian Matthew Nadeau book") %}
+
+  {# Open Graph #}
+  {% do seomatic.meta.ogType("product") %}
+  {% do seomatic.meta.ogTitle("Get the Book — The Light Inside the Tunnel") %}
+  {% do seomatic.meta.ogDescription("Order directly from the author. A philosophy for the human heart by Sebastian Matthew Nadeau.") %}
+
+  {# Twitter Card #}
+  {% do seomatic.meta.twitterCard("summary_large_image") %}
+  {% do seomatic.meta.twitterTitle("Get the Book — The Light Inside the Tunnel") %}
+  {% do seomatic.meta.twitterDescription("Order directly from the author. Available in print and ebook.") %}
+{% endblock %}
+
+{% block content %}
+
+  {# Purchase Hero — book cover + title #}
+  <header class="purchase-hero section--tunnel" data-reveal>
+    <div class="container container--content">
+      <div class="purchase-hero__grid">
+        {% if (entry.bookCover ?? null) and entry.bookCover|length %}
+          {% set cover = entry.bookCover.one() %}
+          {% if cover %}
+            <div class="purchase-hero__cover">
+              {% if craft.app.plugins.getPlugin('imager-x') %}
+                {% set transforms = craft.imagerx.transformImage(cover, 'bookCover') %}
+                <img src="{{ transforms[0].url }}"
+                     srcset="{{ craft.imagerx.srcset(transforms) }}"
+                     sizes="(max-width: 767px) 280px, 400px"
+                     alt="The Light Inside the Tunnel book cover" loading="eager" width="400" height="600">
+              {% else %}
+                <img src="{{ cover.getUrl() }}" alt="The Light Inside the Tunnel book cover" loading="eager" width="400" height="600">
+              {% endif %}
+            </div>
+          {% endif %}
+        {% else %}
+          <div class="purchase-hero__cover purchase-hero__cover--placeholder">
+            <span class="purchase-hero__placeholder-text">The Light Inside the Tunnel</span>
+          </div>
+        {% endif %}
+        <div class="purchase-hero__text">
+          <h1 class="purchase-hero__title">The Light Inside the Tunnel</h1>
+          <p class="purchase-hero__subtitle">A Philosophy for the Human Heart</p>
+          <p class="purchase-hero__author">by Sebastian Matthew Nadeau</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {# Order Section — Snipcart buy buttons #}
+  <section class="section" data-reveal>
+    <div class="container container--reading text-center">
+      <p class="text-lead">This is where you get it — directly from Sebastian. No middlemen, no algorithms, no massive retailer between you and the person who wrote it.</p>
+
+      {% set snipcartKey = getenv('SNIPCART_API_KEY') %}
+
+      {# Purchase options from CMS table field #}
+      {% if (entry.purchaseOptions ?? null) and entry.purchaseOptions|length %}
+        <div class="purchase-options">
+          {% for option in entry.purchaseOptions %}
+            <div class="purchase-option">
+              <h2 class="purchase-option__format">{{ option.formatName }}</h2>
+              {% if option.description %}
+                <p class="purchase-option__desc">{{ option.description }}</p>
+              {% endif %}
+              <p class="purchase-option__price">${{ option.price }} {{ option.currency|upper }}</p>
+
+              {% if snipcartKey and option.snipcartId %}
+                <button
+                  class="btn btn--primary snipcart-add-item"
+                  data-item-id="{{ option.snipcartId }}"
+                  data-item-name="The Light Inside the Tunnel — {{ option.formatName }}"
+                  data-item-price="{{ option.price }}"
+                  data-item-url="/get-the-book"
+                  data-item-description="{{ option.description ?? option.formatName ~ ' edition' }}"
+                >
+                  Order {{ option.formatName|lower }}
+                </button>
+              {% else %}
+                <p class="text-small text-muted">Coming soon</p>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        {# Fallback when purchase options aren't configured in CMS yet #}
+        <div class="purchase-options">
+          <div class="purchase-option">
+            <h2 class="purchase-option__format">Ebook</h2>
+            <p class="purchase-option__desc">Digital edition, all devices</p>
+            <p class="purchase-option__price">$24.00 CAD</p>
+            {% if snipcartKey %}
+              <button
+                class="btn btn--primary snipcart-add-item"
+                data-item-id="litit-ebook"
+                data-item-name="The Light Inside the Tunnel — Ebook"
+                data-item-price="24.00"
+                data-item-url="/get-the-book"
+                data-item-description="Digital edition, all devices"
+              >
+                Order ebook
+              </button>
+            {% else %}
+              <p class="text-small text-muted">Coming soon</p>
+            {% endif %}
+          </div>
+          <div class="purchase-option">
+            <h2 class="purchase-option__format">Print Edition</h2>
+            <p class="purchase-option__desc">Paperback, designed and typeset by the author</p>
+            <p class="purchase-option__price">$36.00 CAD</p>
+            {% if snipcartKey %}
+              <button
+                class="btn btn--primary snipcart-add-item"
+                data-item-id="litit-print"
+                data-item-name="The Light Inside the Tunnel — Print Edition"
+                data-item-price="36.00"
+                data-item-url="/get-the-book"
+                data-item-description="Paperback, designed and typeset by the author"
+              >
+                Order print
+              </button>
+            {% else %}
+              <p class="text-small text-muted">Coming soon</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+  {# Pull Quote #}
+  <section class="section section--cream-dark" data-reveal>
+    <div class="container container--reading text-center">
+      <div class="declaration">
+        <p>"Our external world is formed by our internal values —<br>
+        by what we recognize as important and worthy<br>
+        to live by and build upon."</p>
+        <p>"Be kind to others. Care for our planet.<br>
+        Spend quality time with those you love.<br>
+        Create precious experiences,<br>
+        because they become the memories that shape one's life."</p>
+        <p class="declaration__attribution">— Sebastian Matthew Nadeau</p>
+      </div>
+    </div>
+  </section>
+
+  {# Testimonials — pulled from testimonials channel #}
+  {% set testimonials = craft.entries.section('testimonials').all() %}
+  {% if testimonials|length %}
+    <section class="section" data-reveal>
+      <div class="container container--reading">
+        {% for testimonial in testimonials %}
+          <blockquote>
+            <p>{{ testimonial.testimonialText ?? '' }}</p>
+            {% if testimonial.reviewerName ?? false %}
+              <cite>— {{ testimonial.reviewerName }}{% if testimonial.reviewerTitle ?? false %}, {{ testimonial.reviewerTitle }}{% endif %}</cite>
+            {% endif %}
+          </blockquote>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+{% endblock %}
+
+{% block jsonLd %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "The Light Inside the Tunnel",
+  "alternateName": "The Light Inside the Tunnel — A Philosophy for the Human Heart",
+  "author": {
+    "@type": "Person",
+    "name": "Sebastian Matthew Nadeau"
+  },
+  "bookFormat": "https://schema.org/Paperback",
+  "genre": "Philosophy",
+  "inLanguage": "en",
+  "url": "{{ siteUrl }}get-the-book",
+  "description": "A philosophy for the human heart. Available in print and ebook directly from the author."{% if (entry.purchaseOptions ?? null) and entry.purchaseOptions|length %},
+  "offers": [
+    {% for option in entry.purchaseOptions %}
+    {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "price": "{{ option.price }}",
+      "priceCurrency": "{{ option.currency|upper }}",
+      "url": "{{ siteUrl }}get-the-book",
+      "seller": {
+        "@type": "Person",
+        "name": "Sebastian Matthew Nadeau"
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+  {% endif %}
+}
+</script>
+{% endblock %}
+
+{% block newsletter %}{% endblock %}

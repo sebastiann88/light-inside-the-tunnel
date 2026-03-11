@@ -1,0 +1,168 @@
+/**
+ * Light Inside the Tunnel — Design Tokens
+ * ========================================
+ * CSS Custom Properties for the design system.
+ * Import this file at the root of your stylesheet.
+ */
+
+:root {
+  /* -------------------------
+     Colors — Core
+     ------------------------- */
+  --color-cream: #FAF6F0;
+  --color-cream-dark: #F0EBE3;
+  --color-charcoal: #2C2825;
+  --color-charcoal-light: #4A4543;
+  --color-warm-gray: #8C8580;
+  --color-warm-gray-light: #D4CFC9;
+
+  /* -------------------------
+     Colors — Accent
+     ------------------------- */
+  --color-gold: #C4973B;
+  --color-gold-dark: #A37E2E;
+  --color-gold-light: #E8D5A8;
+
+  /* -------------------------
+     Colors — Dark / Tunnel
+     ------------------------- */
+  --color-tunnel: #1A1714;
+  --color-tunnel-text: #E8E2D8;
+
+  /* -------------------------
+     Typography — Families
+     ------------------------- */
+  --font-body: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-heading: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+
+  /* -------------------------
+     Typography — Scale
+     Ratio: ~1.333 (perfect fourth)
+     Base: 18px desktop / 16px mobile
+     ------------------------- */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.333rem;
+  --text-2xl: 1.777rem;
+  --text-3xl: 2.369rem;
+  --text-4xl: 3.157rem;
+
+  /* -------------------------
+     Typography — Line Heights
+     ------------------------- */
+  --leading-tight: 1.15;
+  --leading-snug: 1.25;
+  --leading-normal: 1.35;
+  --leading-relaxed: 1.5;
+  --leading-body: 1.75;
+
+  /* -------------------------
+     Spacing — 8px grid
+     ------------------------- */
+  --space-1: 0.25rem;   /*  4px */
+  --space-2: 0.5rem;    /*  8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.5rem;    /* 24px */
+  --space-6: 2rem;      /* 32px */
+  --space-7: 3rem;      /* 48px */
+  --space-8: 4rem;      /* 64px */
+  --space-9: 6rem;      /* 96px */
+  --space-10: 8rem;     /* 128px */
+
+  /* -------------------------
+     Layout — Widths
+     ------------------------- */
+  --width-reading: 38em;  /* ~680px — optimal reading measure */
+  --width-content: 48rem; /* General content */
+  --width-wide: 64rem;    /* Cards, grids */
+  --width-max: 80rem;     /* Outer container */
+
+  /* -------------------------
+     Borders & Radii
+     ------------------------- */
+  --radius-sm: 2px;
+  --radius-base: 4px;
+  --radius-lg: 8px;
+
+  /* -------------------------
+     Transitions
+     ------------------------- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease-out;
+
+  /* -------------------------
+     Shadows
+     ------------------------- */
+  --shadow-sm: 0 1px 3px rgba(44, 40, 37, 0.06);
+  --shadow-base: 0 2px 8px rgba(44, 40, 37, 0.08);
+  --shadow-lg: 0 4px 16px rgba(44, 40, 37, 0.10);
+
+  /* -------------------------
+     Focus
+     ------------------------- */
+  --focus-ring: 2px solid var(--color-gold);
+  --focus-offset: 2px;
+}
+
+/* ===========================
+   Base Typography Setup
+   =========================== */
+
+html {
+  font-size: 100%; /* 16px mobile */
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 112.5%; /* 18px desktop */
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  color: var(--color-charcoal);
+  background-color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+h1 { font-size: var(--text-4xl); line-height: var(--leading-tight); }
+h2 { font-size: var(--text-3xl); line-height: var(--leading-snug); }
+h3 { font-size: var(--text-2xl); line-height: var(--leading-normal); }
+h4 { font-size: var(--text-xl);  line-height: var(--leading-relaxed); }
+
+/* ===========================
+   Reduced Motion
+   =========================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===========================
+   Focus Styles
+   =========================== */
+
+:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}

@@ -1,0 +1,20 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: e49c3668-cb6d-49f0-bf0c-08414ace13ee # Blog
+handle: blog
+maxAuthors: 1
+name: Blog
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  ffd7cb28-4fcf-45d1-8bb6-7d0e05c32424: # Light Inside the Tunnel
+    enabledByDefault: true
+    hasUrls: true
+    template: blog/_entry
+    uriFormat: 'blog/{slug}'
+type: channel

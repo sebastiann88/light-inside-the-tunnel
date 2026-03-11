@@ -1,0 +1,36 @@
+{#
+  Site Footer
+  Dark tunnel background — bookends the site with the hero
+  Simple centered layout with nav links, gold divider, copyright
+#}
+
+{% set settings = siteSettings ?? null %}
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="site-footer__title">Light Inside the Tunnel</p>
+    <p class="site-footer__subtitle">A Philosophy for the Human Heart</p>
+
+    <ul class="site-footer__nav" aria-label="Footer navigation">
+      <li><a href="/the-book">The Book</a></li>
+      <li><a href="/about-the-author">The Author</a></li>
+      <li><a href="/quotes">Quotes</a></li>
+    </ul>
+    <ul class="site-footer__nav" aria-label="Secondary navigation">
+      <li><a href="/blog">Blog</a></li>
+      {% if settings and settings.contactEmail %}
+        <li><a href="mailto:{{ settings.contactEmail }}">Contact</a></li>
+      {% endif %}
+      <li><a href="/privacy">Privacy</a></li>
+    </ul>
+
+    <div class="site-footer__divider"></div>
+
+    <p class="site-footer__copyright">
+      {{ settings and settings.copyrightText ? settings.copyrightText : '© ' ~ now|date('Y') ~ ' Sebastian Matthew Nadeau' }}
+    </p>
+    <p class="site-footer__copyright" style="margin-top: var(--space-2);">
+      Designed by <a href="https://skylightdesigns.ca" target="_blank" rel="noopener">Skylight Designs</a>
+    </p>
+  </div>
+</footer>

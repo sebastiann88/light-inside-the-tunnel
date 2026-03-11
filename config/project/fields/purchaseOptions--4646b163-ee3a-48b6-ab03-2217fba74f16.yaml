@@ -1,0 +1,80 @@
+columnSuffix: null
+handle: purchaseOptions
+instructions: null
+name: 'Purchase Options'
+searchable: false
+settings:
+  addRowLabel: 'Add a row'
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - Format
+            -
+              - handle
+              - formatName
+            -
+              - type
+              - singleline
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - Price
+            -
+              - handle
+              - price
+            -
+              - type
+              - singleline
+      -
+        - col3
+        -
+          __assoc__:
+            -
+              - heading
+              - Currency
+            -
+              - handle
+              - currency
+            -
+              - type
+              - singleline
+      -
+        - col4
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Snipcart ID'
+            -
+              - handle
+              - snipcartId
+            -
+              - type
+              - singleline
+      -
+        - col5
+        -
+          __assoc__:
+            -
+              - heading
+              - Description
+            -
+              - handle
+              - description
+            -
+              - type
+              - singleline
+  maxRows: null
+  minRows: null
+  staticRows: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

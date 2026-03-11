@@ -1,0 +1,39 @@
+{#
+  Newsletter Signup
+  Pulls headline/subtext from Site Settings global
+  Uses newsletter provider form action for submission
+#}
+
+{% set settings = siteSettings ?? null %}
+
+{% if settings and settings.newsletterFormAction %}
+<section class="section section--cream-dark" data-reveal>
+  <div class="container container--reading newsletter">
+    <h2 class="newsletter__heading">
+      {{ settings.newsletterHeadline ?? 'Stay in the light' }}
+    </h2>
+    <p class="text-lead text-muted">
+      {{ settings.newsletterSubtext ?? 'Reflections on Consistencialism, writing updates, and quiet truths — delivered to your inbox.' }}
+    </p>
+    <form class="newsletter__form"
+          action="{{ settings.newsletterFormAction }}"
+          method="post">
+      <label for="newsletter-email" class="sr-only">Email address</label>
+      <input
+        type="email"
+        id="newsletter-email"
+        name="email"
+        class="newsletter__input"
+        placeholder="Your email"
+        required
+        autocomplete="email"
+      >
+      <button type="submit" class="btn btn--primary">Join &rarr;</button>
+    </form>
+    <p class="newsletter__fine-print">No spam. Just light.</p>
+
+    {# Success state — shown via JS after form submit #}
+    <p class="newsletter__success" hidden>Welcome in.</p>
+  </div>
+</section>
+{% endif %}

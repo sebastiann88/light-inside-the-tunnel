@@ -1,0 +1,58 @@
+{#
+  Blog — /blog
+  Placeholder until blog content is populated
+#}
+
+{% extends '_layouts/base' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block bodyClass %}page-blog{% endblock %}
+
+{% block head %}
+  {% do seomatic.meta.seoTitle("Blog — The Light Inside the Tunnel") %}
+  {% do seomatic.meta.seoDescription("Writing, reflections, and updates from Sebastian Matthew Nadeau — author of The Light Inside the Tunnel.") %}
+{% endblock %}
+
+{% block content %}
+
+  <header class="page-header section--tunnel">
+    <div class="container container--reading text-center">
+      <h1 class="page-header__title">From the tunnel</h1>
+      <p class="text-lead" style="color: var(--color-tunnel-text); margin-block-start: var(--space-4);">
+        Writing, reflections, and honest words from Sebastian.
+      </p>
+    </div>
+  </header>
+
+  {% set posts = craft.entries.section('blog').orderBy('postDate desc').all() %}
+
+  {% if posts|length %}
+    <section class="section" data-reveal>
+      <div class="container container--content">
+        {% for post in posts %}
+          <article class="blog-card" style="margin-block-end: var(--space-6);">
+            <h2 style="font-family: var(--font-heading); font-size: var(--text-xl); margin-block-end: var(--space-2);">
+              <a href="{{ post.url }}" style="text-decoration: none; color: var(--color-charcoal);">{{ post.title }}</a>
+            </h2>
+            <time style="font-size: var(--text-sm); color: var(--color-charcoal-light);" datetime="{{ post.postDate|date('Y-m-d') }}">
+              {{ post.postDate|date('F j, Y') }}
+            </time>
+            {% if post.blogExcerpt ?? false %}
+              <p class="text-lead" style="margin-block-start: var(--space-3);">{{ post.blogExcerpt }}</p>
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+  {% else %}
+    <section class="section" data-reveal>
+      <div class="container container--reading text-center">
+        <p class="text-lead">Nothing here yet. But something is coming.</p>
+      </div>
+    </section>
+  {% endif %}
+
+{% endblock %}
+
+{% block newsletter %}{% endblock %}

@@ -1,0 +1,31 @@
+{#
+  404 — Page Not Found
+  Warm, on-brand error page
+#}
+
+{% extends '_layouts/base' %}
+
+{% block title %}Page Not Found{% endblock %}
+
+{% block bodyClass %}page-404{% endblock %}
+
+{% block head %}
+  {% do seomatic.meta.seoTitle("Page Not Found — The Light Inside the Tunnel") %}
+  {% do seomatic.meta.robots("noindex,nofollow") %}
+{% endblock %}
+
+{% block content %}
+
+  <section class="section section--tunnel error-page">
+    <div class="container container--reading text-center">
+      <h1 class="page-header__title">You've wandered off the path</h1>
+      <p class="text-lead my-5">
+        But there's still light ahead. The page you're looking for doesn't exist — or maybe it moved on, like everything does.
+      </p>
+      <a href="/" class="btn btn--primary">Back to the beginning</a>
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block newsletter %}{% endblock %}

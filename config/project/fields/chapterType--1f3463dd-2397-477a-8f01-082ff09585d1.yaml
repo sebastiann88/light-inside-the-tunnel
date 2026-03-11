@@ -1,0 +1,66 @@
+columnSuffix: null
+handle: chapterType
+instructions: null
+name: 'Chapter Type'
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Chapter
+        -
+          - value
+          - chapter
+        -
+          - default
+          - true
+    -
+      __assoc__:
+        -
+          - label
+          - Prologue
+        -
+          - value
+          - prologue
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - Preface
+        -
+          - value
+          - preface
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - Interlude
+        -
+          - value
+          - interlude
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - Epilogue
+        -
+          - value
+          - epilogue
+        -
+          - default
+          - false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

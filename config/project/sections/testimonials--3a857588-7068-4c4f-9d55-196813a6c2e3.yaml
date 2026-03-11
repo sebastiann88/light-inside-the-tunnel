@@ -1,0 +1,20 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 81925ef6-9655-4e70-97fb-ba12a2e94f9c # Testimonials
+handle: testimonials
+maxAuthors: 1
+name: Testimonials
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  ffd7cb28-4fcf-45d1-8bb6-7d0e05c32424: # Light Inside the Tunnel
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: channel

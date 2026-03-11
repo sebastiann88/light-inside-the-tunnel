@@ -1,0 +1,20 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 9e336723-f548-425c-a800-f3d49833ef37 # Author Bio
+handle: authorBio
+maxAuthors: 1
+name: 'Author Bio'
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  ffd7cb28-4fcf-45d1-8bb6-7d0e05c32424: # Light Inside the Tunnel
+    enabledByDefault: true
+    hasUrls: true
+    template: about-the-author
+    uriFormat: about-the-author
+type: single

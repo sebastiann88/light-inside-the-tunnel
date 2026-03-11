@@ -1,0 +1,41 @@
+{#
+  Site Navigation
+  Desktop: horizontal inline with CTA
+  Mobile: hamburger → full-screen cream overlay
+  Sticky with backdrop-blur on scroll (handled by main.js)
+#}
+
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="container site-nav__inner">
+    <a href="/" class="site-nav__logo">Light Inside the Tunnel</a>
+
+    {# Desktop nav #}
+    <ul class="site-nav__links">
+      <li><a href="/the-book" class="site-nav__link">The Book</a></li>
+      <li><a href="/about-the-author" class="site-nav__link">The Author</a></li>
+      <li><a href="/quotes" class="site-nav__link">Quotes</a></li>
+      <li><a href="/get-the-book" class="btn btn--primary btn--sm">Get the Book</a></li>
+    </ul>
+
+    {# Mobile toggle #}
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+{# Mobile overlay #}
+<div class="mobile-nav" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <button class="mobile-nav__close" aria-label="Close menu">&times;</button>
+  <a href="/the-book" class="mobile-nav__link">The Book</a>
+  <a href="/about-the-author" class="mobile-nav__link">The Author</a>
+  <a href="/quotes" class="mobile-nav__link">Quotes</a>
+  <a href="/get-the-book" class="mobile-nav__link">Get the Book</a>
+  <div style="margin-top: var(--space-5); display: flex; gap: var(--space-4);">
+    <a href="/blog" class="text-label" style="text-decoration: none;">Blog</a>
+  </div>
+</div>

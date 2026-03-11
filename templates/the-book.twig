@@ -1,0 +1,456 @@
+{#
+  About the Book — /the-book
+  Full book overview: hook, Consistencialism explainer, who it's for, chapter structure, purchase CTA
+#}
+
+{% extends '_layouts/base' %}
+
+{% block title %}About the Book{% endblock %}
+
+{% block bodyClass %}page-book{% endblock %}
+
+{% block head %}
+  {% do seomatic.meta.seoTitle("About the Book — The Light Inside the Tunnel") %}
+  {% do seomatic.meta.seoDescription("What is Consistencialism? You are what you practice, not what you intend. The Light Inside the Tunnel by Sebastian Matthew Nadeau.") %}
+  {% do seomatic.meta.seoKeywords("the light inside the tunnel book, what is consistencialism, philosophy for the human heart, consistencialism philosophy") %}
+
+  {# Open Graph #}
+  {% do seomatic.meta.ogType("book") %}
+  {% do seomatic.meta.ogTitle("The Light Inside the Tunnel — A Philosophy for the Human Heart") %}
+  {% do seomatic.meta.ogDescription("A book about living consistently with who you truly are. Introducing Consistencialism — a philosophy of practice, not performance.") %}
+
+  {# Twitter Card #}
+  {% do seomatic.meta.twitterCard("summary_large_image") %}
+  {% do seomatic.meta.twitterTitle("About the Book — The Light Inside the Tunnel") %}
+  {% do seomatic.meta.twitterDescription("What is Consistencialism? A philosophy for the human heart by Sebastian Matthew Nadeau.") %}
+{% endblock %}
+
+{% block content %}
+
+  {# Page Header #}
+  <header class="page-header section--tunnel">
+    <div class="container container--reading text-center">
+      <h1 class="page-header__title">The Light Inside the Tunnel</h1>
+      <p class="page-header__subtitle">A Philosophy for the Human Heart</p>
+    </div>
+  </header>
+
+  {# Opening Hook #}
+  <section class="section" data-reveal>
+    <div class="container container--reading">
+      {% if entry.synopsis ?? false %}
+        {{ entry.synopsis }}
+      {% else %}
+        <p class="text-lead">Most philosophy books ask you to think differently. This one asks you to <em>live</em> differently — and then notice what changes.</p>
+        <p><em>The Light Inside the Tunnel</em> starts with a simple observation: the things you practice are the things you actually believe. Everything else is decoration. Your intentions, your declarations, your carefully worded values — they don't count until they reach your hands. Until they show up in what you do on a Tuesday afternoon when no one is watching.</p>
+        <p>That's not a comfortable idea. But it's an honest one. And this book is more interested in honesty than comfort.</p>
+      {% endif %}
+    </div>
+  </section>
+
+  <div class="divider">&#9670;</div>
+
+  {# What is Consistencialism? #}
+  <section class="section section--cream-dark" id="consistencialism" data-reveal>
+    <div class="container container--content">
+      <h2 class="section-heading text-center">Consistencialism — A Humanistic Philosophy</h2>
+
+      <p class="text-lead text-center" style="max-width: var(--width-reading); margin-inline: auto;"><strong>The study of how our thoughts, psyche, and inner emotional state can influence how we form our exterior environments.</strong></p>
+
+      {# Two declarations — side by side on desktop, stacked on mobile #}
+      <div class="declarations-grid">
+        <div class="declaration">
+          <p>"I believe in the soul of humanity.<br>
+          Love comes from the soul.<br>
+          When we treat each other with love,<br>
+          that lifts our spirits,<br>
+          where we can live in harmony."</p>
+          <p class="declaration__attribution">— Sebastian Matthew Nadeau</p>
+        </div>
+
+        <div class="declaration">
+          <p>"When we treat each other with love,<br>
+          the spirit of God works through us<br>
+          — not by force, but by volition.<br>
+          Love is filling both vessels<br>
+          from the same spring."</p>
+          <p class="declaration__attribution">— Sebastian Matthew Nadeau</p>
+        </div>
+      </div>
+
+      {% if entry.consistencialismSection ?? false %}
+        {{ entry.consistencialismSection }}
+      {% else %}
+        <p>We are free to express ourselves authentically, so long as our way of life does not destroy life itself.</p>
+      {% endif %}
+    </div>
+  </section>
+
+  {# Ten Core Beliefs — cream background (lighter, "room within a room") #}
+  <section class="section beliefs-section" data-reveal>
+    <div class="container container--reading">
+      <p class="beliefs-section__label">The Ten Personal Core Beliefs</p>
+
+      <div class="beliefs-list">
+        <div class="belief">
+          <span class="belief__number">01</span>
+          <div>
+            <p class="belief__title" role="button" tabindex="0">I believe in preserving and respecting human dignity.</p>
+            <p class="belief__explanation">Every person carries the right to express who they truly are — their authentic self — and to contribute to the world from that place. Dignity is not earned through accomplishment or conformity. It is inherent. When we honour someone's dignity, we honour their freedom to exist fully, without condition.</p>
+          </div>
+        </div>
+        <div class="belief">
+          <span class="belief__number">02</span>
+          <div>
+            <p class="belief__title" role="button" tabindex="0">I believe we are all imperfect, therefore life is the pursuit of something we cannot fully reach alone.</p>
+            <p class="belief__explanation">We are imperfect, therefore life is the pursuit of something we cannot fully reach alone. Our imperfections are not flaws — they are the very thing that draw us toward each other. We grow not by achieving perfection, but by sharing the journey with others who are equally incomplete. In that shared striving, we find belonging.</p>
+          </div>
+        </div>
+        <div class="belief">
+          <span class="belief__number">03</span>
+          <div>
+            <p class="belief__title" role="button" tabindex="0">I believe that we can all be united, accepted, and loved for our uniqueness.</p>
+            <p class="belief__explanation">Each person's identity is a gift — not something to be corrected or hidden. When we accept others not in spite of their differences but because of them, we build a world where people no longer have to perform a version of themselves to be loved. Belonging should not require becoming someone else.</p>
+          </div>
+        </div>
+        <div class="belief">
+          <span class="belief__number">04</span>
+          <div>
+            <p class="belief__title" role="button" tabindex="0">I believe that we are part of nature, and we need to live in nature's natural ecosystem.</p>
+            <p class="belief__explanation">The Earth is not a resource to be consumed — it is a home to be cared for. We belong to nature, not the other way around. Living in balance with the natural world is not a sacrifice; it is a return to something essential. Care for the planet is care for ourselves.</p>
+          </div>
+        </div>
+        <div class="belief">
+          <span class="belief__number">05</span>
+          <div>
+            <p class="belief__title" role="button" tabindex="0">I believe that we are all invaluable human beings, and our worth is equally undefiable.</p>
+            <p class="belief__explanation">Worth is not measured by productivity, status, or usefulness. Every human being is invaluable — and that value is equal across all people. It cannot be ranked. It cannot be taken. It can only be recognized — or failed to be recognized. And that failure is ours, not theirs.</p>
+          </div>
+        </div>
+
+        <div class="belief">
+          <span class="belief__number">06</span>
+          <div>
+            <p class="belief__title" role="button" tabindex="0">I believe the beauty of life, is to go out and witness the beauty in the world.</p>
+            <p class="belief__explanation">Beauty is not passive. It asks us to go out, to pay attention, and to be changed by what we find. It lives in art, in nature, in a stranger's act of kindness, in a child's unfiltered honesty. Seeking beauty is not indulgence — it is one of the deepest forms of being alive.</p>
+          </div>
+        </div>
+        <div class="belief">
+          <span class="belief__number">07</span>
+          <div>
+            <p class="belief__title" role="button" tabindex="0">I believe the purpose of life is to live well, to contribute to others, and to reduce suffering.</p>
+            <p class="belief__explanation">Purpose is not found in ambition alone, but in contribution. To live well is to leave the world a little better — not through grand gestures, but through consistent small ones. Reducing suffering, even in quiet ways, gives a life its shape and meaning.</p>
+          </div>
+        </div>
+        <div class="belief">
+          <span class="belief__number">08</span>
+          <div>
+            <p class="belief__title" role="button" tabindex="0">I believe the joy of life, is to share experiences in good company.</p>
+            <p class="belief__explanation">Joy is rarely solitary. It blooms in the presence of people we care about — in shared meals, laughter, silence, adventure. The quality of our lives is measured not by what we accumulate, but by who we experience it with.</p>
+          </div>
+        </div>
+        <div class="belief">
+          <span class="belief__number">09</span>
+          <div>
+            <p class="belief__title" role="button" tabindex="0">I believe the meaning of life is about human connection; creating precious moments, for yourself and for others to keep, and to pass on wisdom for future generations.</p>
+            <p class="belief__explanation">Meaning is built between people. It lives in the moments we create together — the ones we carry with us long after they've passed. And it extends beyond our own lifetime: the wisdom we pass on becomes part of someone else's foundation. Connection is how we outlast ourselves.</p>
+          </div>
+        </div>
+        <div class="belief">
+          <span class="belief__number">10</span>
+          <div>
+            <p class="belief__title" role="button" tabindex="0">I believe in the passing of life, you will be remembered for the person you were, not the things you had. You will be honoured for what you left behind, and be reminded for what you took away.</p>
+            <p class="belief__explanation">Legacy is not wealth or title. It is character. When a life ends, what remains is the impression left on others — the kindness given, the courage shown, the truth spoken. And equally, what was taken. We are remembered whole — for what we gave and for what we cost.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Closing creed + CTA — back to cream-dark #}
+  <section class="section section--cream-dark" data-reveal>
+    <div class="container container--reading">
+      <div class="declaration">
+        <p>"Our external world is formed by our internal values —<br>
+        by what we recognize as important and worthy<br>
+        to live by and build upon."</p>
+        <p>"Be kind to others. Care for our planet.<br>
+        Spend quality time with those you love.<br>
+        Create precious experiences,<br>
+        because they become the memories that shape one's life."</p>
+        <p class="declaration__attribution">— Sebastian Matthew Nadeau</p>
+      </div>
+
+      <blockquote>
+        <p>"We are all one among many people, though each unique person shares a spectrum of similar emotions."</p>
+      </blockquote>
+
+      <div class="text-center">
+        <a href="/get-the-book" class="btn btn--primary">Go deeper — get the book</a>
+      </div>
+    </div>
+  </section>
+
+  {# Who This Is For #}
+  <section class="section" data-reveal>
+    <div class="container container--reading">
+      <h2 class="section-heading">Who this is for</h2>
+
+      {% if entry.audienceText ?? false %}
+        {{ entry.audienceText }}
+      {% else %}
+        <p>This book is for you if you've ever sat up at 3 AM wondering whether the life you're living is actually yours. If you've felt the distance between who you are and who you're pretending to be — and you're tired of pretending.</p>
+        <p>It's for people who are suspicious of easy answers but still want answers. People who've read the self-help books and found them thin. People who sense that philosophy should be something you <em>do</em>, not something you study.</p>
+        <p>It's not for everyone. It's not trying to be. But if something on this page made you pause — even for a second — it might be for you.</p>
+      {% endif %}
+    </div>
+  </section>
+
+  <div class="divider">&#9670;</div>
+
+  {# Structure Overview #}
+  <section class="section section--cream-dark" data-reveal>
+    <div class="container container--content">
+      <h2 class="section-heading">Inside the book</h2>
+
+      <p class="text-lead">Wisdom is knowing knowledge in practice.</p>
+
+      {# Prologues #}
+      <div class="book-section">
+        <h3 class="book-section__label">Prologues</h3>
+        <p class="book-section__chapters"><strong>Soup, Then a Coat</strong> · <strong>Groceries with an Official Pep Talk</strong> · <strong>The Sandwich Trilogy</strong></p>
+        <p>Three prologues. Soup, groceries, sandwiches. Philosophy starts where life starts — with the ordinary things that turn out not to be ordinary at all.</p>
+      </div>
+
+      {# Preface #}
+      <div class="book-section">
+        <h3 class="book-section__label">A Word Before the Journey</h3>
+        <p>A quiet moment before the road opens up. What this book is trying to do, and why.</p>
+      </div>
+
+      {# Part One #}
+      <div class="book-section">
+        <h3 class="book-section__part">Part One: The Search for Light</h3>
+
+        <div class="chapter-list">
+          <div class="chapter-list__item">
+            <span class="chapter-list__number">1</span>
+            <div>
+              <strong>The Search for Meaning</strong>
+              <p>The question underneath every other question. What are we looking for — and what happens when the usual answers stop working?</p>
+            </div>
+          </div>
+          <div class="chapter-list__item">
+            <span class="chapter-list__number">2</span>
+            <div>
+              <strong>The Nature of Value and the Invaluable Self</strong>
+              <p>What makes something matter. What makes <em>you</em> matter. And why those two questions are the same question.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {# Part Two #}
+      <div class="book-section">
+        <h3 class="book-section__part">Part Two: Love as the Way</h3>
+
+        <div class="chapter-list">
+          <div class="chapter-list__item">
+            <span class="chapter-list__number">3</span>
+            <div>
+              <strong>The Spirit of Love</strong>
+              <p>Love as something larger than romance. A force you practice, not a feeling you wait for.</p>
+            </div>
+          </div>
+          <div class="chapter-list__item">
+            <span class="chapter-list__number">4</span>
+            <div>
+              <strong>The Moral Compass</strong>
+              <p>How you know which direction is right when no one's giving you a map.</p>
+            </div>
+          </div>
+          <div class="chapter-list__item">
+            <span class="chapter-list__number">5</span>
+            <div>
+              <strong>Love in Action</strong>
+              <p>Where belief meets behavior. The chapter where Consistencialism starts to move your hands.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {# Part Three #}
+      <div class="book-section">
+        <h3 class="book-section__part">Part Three: The World We Share</h3>
+
+        <div class="chapter-list">
+          <div class="chapter-list__item">
+            <span class="chapter-list__number">6</span>
+            <div>
+              <strong>Nature's Equilibrium</strong>
+              <p>What the natural world already knows about balance — and what we keep forgetting.</p>
+            </div>
+          </div>
+          <div class="chapter-list__item">
+            <span class="chapter-list__number">7</span>
+            <div>
+              <strong>Human Connection and Human Potential</strong>
+              <p>What's possible between people when pretense drops away.</p>
+            </div>
+          </div>
+          <div class="chapter-list__item">
+            <span class="chapter-list__number">8</span>
+            <div>
+              <strong>Happiness, Fulfillment, and Joy</strong>
+              <p>Three different things. Most people chase only one of them.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {# Part Four #}
+      <div class="book-section">
+        <h3 class="book-section__part">Part Four: The Inner Life</h3>
+
+        <div class="chapter-list">
+          <div class="chapter-list__item">
+            <span class="chapter-list__number">9</span>
+            <div>
+              <strong>The Inner Dialogue</strong>
+              <p>The conversation you're always having with yourself — and whether it's honest.</p>
+            </div>
+          </div>
+          <div class="chapter-list__item">
+            <span class="chapter-list__number">10</span>
+            <div>
+              <strong>The Soul's Journey</strong>
+              <p>Not where the soul goes after. Where it goes <em>during</em>.</p>
+            </div>
+          </div>
+          <div class="chapter-list__item">
+            <span class="chapter-list__number">11</span>
+            <div>
+              <strong>Friendship, Presence, and Authenticity</strong>
+              <p>What it means to actually be there. For someone else and for yourself.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {# Part Five #}
+      <div class="book-section">
+        <h3 class="book-section__part">Part Five: Living the Philosophy</h3>
+
+        <div class="chapter-list">
+          <div class="chapter-list__item">
+            <span class="chapter-list__number">12</span>
+            <div>
+              <strong>Communication, Dialogue, and Understanding</strong>
+              <p>How to say what you mean. How to hear what others mean. The space between.</p>
+            </div>
+          </div>
+          <div class="chapter-list__item">
+            <span class="chapter-list__number">13</span>
+            <div>
+              <strong>Conflict, Strength, and the Courage to Understand</strong>
+              <p>Strength isn't winning the argument. It's staying in the room.</p>
+            </div>
+          </div>
+          <div class="chapter-list__item">
+            <span class="chapter-list__number">14</span>
+            <div>
+              <strong>Love, Care, and Human Dignity</strong>
+              <p>The practical face of everything that came before.</p>
+            </div>
+          </div>
+          <div class="chapter-list__item">
+            <span class="chapter-list__number">15</span>
+            <div>
+              <strong>Consistencialism — A Philosophy for Living</strong>
+              <p>The philosophy, fully named and fully explained. Everything the book has been building toward.</p>
+            </div>
+          </div>
+          <div class="chapter-list__item">
+            <span class="chapter-list__number">16</span>
+            <div>
+              <strong>The Four Pillars of a Good Life</strong>
+              <p>What it rests on. What holds it up.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {# Epilogue #}
+      <div class="book-section">
+        <h3 class="book-section__label">Epilogue: A Light Inside the Tunnel</h3>
+        <p>Where the title earns its meaning.</p>
+      </div>
+
+      {# Interludes #}
+      <div class="book-section book-section--interludes">
+        <h3 class="book-section__label">Interludes</h3>
+        <p class="book-section__chapters"><strong>Heart of a Soldier</strong> · <strong>The Soldier's Song</strong> · <strong>A Dialogue on Healing</strong> · <strong>A Dialogue with Socrates</strong> · <strong>A Second Dialogue with Socrates</strong> · <strong>A Conversation with a Child</strong></p>
+        <p>Songs. Dialogues with ancient philosophers. A conversation with a child. These interludes are the book breathing — moments where the philosophy steps out of argument and into story, poetry, and play.</p>
+
+        <blockquote>
+          <p>"The philosopher has not yet practiced what the philosophy preaches. The healing is not in the writing. It is in the living."</p>
+          <cite>— from <em>A Dialogue with Socrates</em></cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  {# Testimonials — pulled from testimonials channel #}
+  {% set testimonials = craft.entries.section('testimonials').all() %}
+  {% if testimonials|length %}
+    <section class="section" data-reveal>
+      <div class="container container--reading">
+        <h2 class="section-heading text-center">What readers are saying</h2>
+        {% for testimonial in testimonials %}
+          <blockquote>
+            <p>{{ testimonial.testimonialText ?? '' }}</p>
+            {% if testimonial.reviewerName ?? false %}
+              <cite>— {{ testimonial.reviewerName }}{% if testimonial.reviewerTitle ?? false %}, {{ testimonial.reviewerTitle }}{% endif %}</cite>
+            {% endif %}
+          </blockquote>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  {# Purchase CTA #}
+  <section class="section section--tunnel" data-reveal>
+    <div class="container container--reading text-center">
+      <p class="purchase-cta__heading">This is just the surface.</p>
+      <a href="/get-the-book" class="btn btn--primary">Go deeper — get the book</a>
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block jsonLd %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "The Light Inside the Tunnel",
+  "alternateName": "The Light Inside the Tunnel — A Philosophy for the Human Heart",
+  "author": {
+    "@type": "Person",
+    "name": "Sebastian Matthew Nadeau"
+  },
+  "bookFormat": "https://schema.org/Paperback",
+  "genre": "Philosophy",
+  "inLanguage": "en",
+  "url": "{{ siteUrl }}the-book",
+  "description": "A philosophy for the human heart. You are what you practice — not what you intend. Not what you declare.",
+  "publisher": {
+    "@type": "Person",
+    "name": "Sebastian Matthew Nadeau"
+  }
+}
+</script>
+{% endblock %}
+
+{# Suppress the default newsletter block between main and footer on this page #}
+{% block newsletter %}{% endblock %}

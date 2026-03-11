@@ -1,0 +1,58 @@
+fieldLayouts:
+  1580837a-5edd-4447-b680-5a4ee771b704:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 3d7b8e78-d6db-4c72-9cc7-f1ac099eef08
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 4646b163-ee3a-48b6-ab03-2217fba74f16 # Purchase Options
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 75b4db8e-e66f-481e-bc97-d54851b9242a
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: a3498bf6-dbd7-4ac6-ad6e-3484ab317aa2
+        userCondition: null
+    thumbFieldKey: null
+handle: purchaseLinks
+name: 'Purchase Links'
+sortOrder: 1

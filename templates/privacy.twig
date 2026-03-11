@@ -1,0 +1,53 @@
+{#
+  Privacy Policy — /privacy
+#}
+
+{% extends '_layouts/base' %}
+
+{% block title %}Privacy Policy{% endblock %}
+
+{% block bodyClass %}page-privacy{% endblock %}
+
+{% block head %}
+  {% do seomatic.meta.seoTitle("Privacy Policy — The Light Inside the Tunnel") %}
+  {% do seomatic.meta.robots("noindex,follow") %}
+{% endblock %}
+
+{% block content %}
+
+  <header class="page-header section--tunnel">
+    <div class="container container--reading text-center">
+      <h1 class="page-header__title">Privacy Policy</h1>
+    </div>
+  </header>
+
+  <section class="section" data-reveal>
+    <div class="container container--reading">
+
+      <p class="text-lead mb-0">
+        This site is maintained by Sebastian Matthew Nadeau. Your privacy matters. Here's what you need to know.
+      </p>
+
+      <h2 class="content-heading">What we collect</h2>
+      <p>If you subscribe to the newsletter, we collect your email address through Brevo (formerly Sendinblue). That's it. We don't use tracking cookies, analytics scripts, or third-party ad networks.</p>
+
+      <h2 class="content-heading">Purchases</h2>
+      <p>Book purchases are processed through Snipcart and Stripe. Payment information is handled entirely by these services and is never stored on our server. Please refer to <a href="https://snipcart.com/privacy-policy" target="_blank" rel="noopener">Snipcart's privacy policy</a> and <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe's privacy policy</a> for details.</p>
+
+      <h2 class="content-heading">Newsletter</h2>
+      <p>Newsletter emails are sent through Brevo. You can unsubscribe at any time using the link in every email. We comply with Canada's Anti-Spam Legislation (CASL) — you will only receive emails you opted into, and we will never share your email with third parties.</p>
+
+      <h2 class="content-heading">Cookies</h2>
+      <p>This site uses only essential cookies required for the shopping cart (Snipcart) to function. No tracking or advertising cookies are used.</p>
+
+      <h2 class="content-heading">Contact</h2>
+      <p>If you have questions about your data, reach out to Sebastian at <a href="mailto:sebastian@skylightdesigns.ca">sebastian@skylightdesigns.ca</a>.</p>
+
+      <p class="text-updated">Last updated: {{ now|date('F Y') }}</p>
+
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block newsletter %}{% endblock %}

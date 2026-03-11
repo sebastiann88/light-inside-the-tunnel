@@ -1,0 +1,198 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  610a6781-8458-4b61-860b-c8dc8654f4a9:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: fe40a34b-9700-424c-b394-4437c0f50fb4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 1f3463dd-2397-477a-8f01-082ff09585d1 # Chapter Type
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 68f4f95d-d398-498f-9162-01f08282f6c2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: eb085842-1084-4074-b267-29d861f2b040 # Chapter Number
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d1372469-1856-4047-aa4c-19edbd7cd6e7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: b1d5224a-6d4b-44ae-86b0-73b8df47bbf4 # Part Number
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 18335c7d-d48e-4431-8c9d-0e4022d7e257
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 1d021f30-e3b1-4849-b4fd-99dfae3af1fb # Part Title
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7ab49484-7974-4366-962a-623f1deecc70
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 6d98af18-8ca1-499e-8a20-f1bd1eb3b4b5 # Chapter Summary
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f2d7f093-dba0-4108-a4ca-5fca82ebe0bc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: a9ea3817-d5ce-47bf-80ae-7a90f2107614 # Chapter Content
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d95e9183-ee65-4c93-b060-37c37737467a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: ee0ebf73-784a-464f-a257-c1645b02eb02 # Key Quote
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 42757e03-9a1a-428a-8707-1812c46d381b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: ffb3a309-09c2-4f2b-af2e-4fc8c55f4dc1 # Related Contributions
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 650f404c-d2a7-49b3-87e1-f1999cc4dca1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 67ba0c31-c0d1-4950-980c-2ad63cc29878 # Chapter Image
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8fc9c0c4-db81-4e5c-b802-b91db4576399
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 47b4ad77-4602-4aa5-ae5d-a807eca6ef53
+        userCondition: null
+    thumbFieldKey: null
+handle: chapters
+hasTitleField: true
+icon: null
+name: Chapters
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

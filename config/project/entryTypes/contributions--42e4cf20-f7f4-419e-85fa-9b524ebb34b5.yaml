@@ -1,0 +1,166 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  eee0048f-14d8-4ce6-9e81-247a4c56c142:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 1de580cd-6b42-42dc-9d19-aef40c4a10e8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: d829f941-d1ad-4723-aea5-5415aac60418 # Contributor Name
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 25b08347-85a9-44a7-9f5f-e311657078de
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 641ff449-3ba9-458d-85d5-587d093fd685 # Era
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c8120dc1-f5f3-4a4a-8f91-df74305d18d4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 452095d4-f12b-4752-9553-f5e316a3fdd4 # Contribution Summary
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bc45c211-3270-42bc-963e-221c7cb0f00a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: ee0ebf73-784a-464f-a257-c1645b02eb02 # Key Quote
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f6d3e5c5-cc53-4326-8e5d-21069e6806d5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 7189bdbb-52c9-4d17-9d1e-8df0e9f6ff9d # Quote Attribution
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e12b93d4-1b74-45e9-96a7-4458413c1d07
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: cbd9d616-ced9-4342-93c9-030b80d86e9e # Related Chapters
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 64829b55-d4c4-44a8-b916-f5d61d293284
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: c63bcd1d-d49b-4d9d-a1b1-b8b68fce2990 # Contributor Image
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3251559e-5835-4af0-91b8-5101f3a4033e
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: bb079171-c5b1-41fe-91cf-3a7142610cf6
+        userCondition: null
+    thumbFieldKey: null
+handle: contributions
+hasTitleField: true
+icon: null
+name: 'Philosophical Contributions'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

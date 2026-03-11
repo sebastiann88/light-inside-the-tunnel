@@ -1,0 +1,110 @@
+{#
+  Quotes Page — /quotes
+  Curated quotes from the book in a masonry grid
+#}
+
+{% extends '_layouts/base' %}
+
+{% block title %}Quotes — The Light Inside the Tunnel{% endblock %}
+
+{% block bodyClass %}page-quotes{% endblock %}
+
+{% block head %}
+  {% do seomatic.meta.seoTitle("Quotes — The Light Inside the Tunnel") %}
+  {% do seomatic.meta.seoDescription("Words from The Light Inside the Tunnel by Sebastian Matthew Nadeau. On practice, belief, spirit, and living consistently with who you truly are.") %}
+  {% do seomatic.meta.seoKeywords("consistencialism quotes, philosophy quotes, wisdom quotes, authentic living quotes") %}
+
+  {# Open Graph #}
+  {% do seomatic.meta.ogTitle("Quotes — Words from the Tunnel") %}
+  {% do seomatic.meta.ogDescription("Curated quotes from The Light Inside the Tunnel. On practice, belief, spirit, and what it means to live consistently.") %}
+
+  {# Twitter Card #}
+  {% do seomatic.meta.twitterCard("summary") %}
+  {% do seomatic.meta.twitterTitle("Quotes — The Light Inside the Tunnel") %}
+  {% do seomatic.meta.twitterDescription("Words from the tunnel. Philosophy quotes by Sebastian Matthew Nadeau.") %}
+{% endblock %}
+
+{% block content %}
+
+  {# Page Header #}
+  <header class="page-header section--tunnel">
+    <div class="container container--reading text-center">
+      <h1 class="page-header__title">Words from the tunnel</h1>
+      <p class="page-header__subtitle">Fragments of a philosophy for the human heart</p>
+    </div>
+  </header>
+
+  {# Featured Quote — large, cream-dark band #}
+  {% set featuredQuote = craft.entries.section('quotes').orderBy('RAND()').one() %}
+  {% if featuredQuote %}
+    <section class="section section--cream-dark" data-reveal>
+      <div class="container container--reading text-center">
+        <blockquote class="featured-quote">
+          <p>"{{ featuredQuote.quoteText }}"</p>
+          {% if featuredQuote.attribution %}
+            <cite>— {{ featuredQuote.attribution }}</cite>
+          {% endif %}
+          <button
+            class="quote-share"
+            type="button"
+            aria-label="Copy quote to clipboard"
+            data-quote="{{ featuredQuote.quoteText|e('html_attr') }}"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M10.5 1.5h-8a1 1 0 0 0-1 1v8"/>
+              <rect x="4.5" y="4.5" width="10" height="10" rx="1"/>
+            </svg>
+            <span class="quote-share__label">Copy quote</span>
+          </button>
+        </blockquote>
+      </div>
+    </section>
+  {% endif %}
+
+  {# Quote Grid — single column under 15, masonry 2-column for 15+ #}
+  {% set quotes = craft.entries.section('quotes')
+    .id(featuredQuote ? 'not ' ~ featuredQuote.id : null)
+    .orderBy('dateCreated asc')
+    .all() %}
+  {% if quotes|length %}
+    <section class="section section--cream-dark" data-reveal>
+      <div class="container container--wide">
+        <div class="quotes-masonry{% if quotes|length >= 15 %} quotes-masonry--two-col{% endif %}">
+          {# Pinned quote — always first in the list #}
+          <div class="quote-card">
+            <p class="quote-card__text">"Be the person for others, that you would like them to be for you."</p>
+            <div class="quote-card__footer">
+              <p class="quote-card__attribution">— Sebastian Matthew Nadeau</p>
+              <button
+                class="quote-share"
+                type="button"
+                aria-label="Copy quote to clipboard"
+                data-quote="Be the person for others, that you would like them to be for you."
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M10.5 1.5h-8a1 1 0 0 0-1 1v8"/>
+                  <rect x="4.5" y="4.5" width="10" height="10" rx="1"/>
+                </svg>
+                <span class="quote-share__label">Copy quote</span>
+              </button>
+            </div>
+          </div>
+          {% for quote in quotes %}
+            {% include '_partials/quote-card' with { quote: quote } only %}
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+  {# CTA Band #}
+  <section class="section section--tunnel" data-reveal>
+    <div class="container container--reading text-center">
+      <p class="purchase-cta__tagline">These are just fragments. The book is the whole.</p>
+      <a href="/get-the-book" class="btn btn--primary">Get the book</a>
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block newsletter %}{% endblock %}

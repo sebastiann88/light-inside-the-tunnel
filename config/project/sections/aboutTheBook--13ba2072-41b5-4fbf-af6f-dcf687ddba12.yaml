@@ -1,0 +1,20 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: cd4b610f-b238-44cd-8718-3adf8104e60e # About the Book
+handle: aboutTheBook
+maxAuthors: 1
+name: 'About the Book'
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  ffd7cb28-4fcf-45d1-8bb6-7d0e05c32424: # Light Inside the Tunnel
+    enabledByDefault: true
+    hasUrls: true
+    template: the-book
+    uriFormat: the-book
+type: single

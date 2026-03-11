@@ -1,0 +1,32 @@
+{#
+  Quote Card
+  Reusable card for displaying a quote entry
+  Expects: quote (entry from quotes channel)
+#}
+
+<div class="quote-card">
+  <p class="quote-card__text">"{{ quote.quoteText }}"</p>
+  <div class="quote-card__footer">
+    <p class="quote-card__attribution">
+      {% if quote.attribution %}
+        — {{ quote.attribution }}
+      {% endif %}
+      {% if quote.sourceChapter is defined and quote.sourceChapter.one() %}
+        {% set chapter = quote.sourceChapter.one() %}
+        · {{ chapter.title }}
+      {% endif %}
+    </p>
+    <button
+      class="quote-share"
+      type="button"
+      aria-label="Copy quote to clipboard"
+      data-quote="{{ quote.quoteText|e('html_attr') }}"
+    >
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10.5 1.5h-8a1 1 0 0 0-1 1v8"/>
+        <rect x="4.5" y="4.5" width="10" height="10" rx="1"/>
+      </svg>
+      <span class="quote-share__label">Copy quote</span>
+    </button>
+  </div>
+</div>
